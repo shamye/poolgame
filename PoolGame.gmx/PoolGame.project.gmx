@@ -14,13 +14,22 @@
     <background>background\bg_water</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\draw_talkbubble.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_baloo</font>
+    <font>fonts\fnt_coiny</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_board</object>
     <object>objects\obj_protagonist</object>
     <object>objects\obj_rival</object>
+    <object>objects\obj_dialoguetest</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\roo_dialoguetest</room>
+    <room>rooms\roo_boardtest</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
