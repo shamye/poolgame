@@ -12,6 +12,7 @@
     <sprite>sprites\spr_boardoutline1</sprite>
     <sprite>sprites\spr_boardoutline2</sprite>
     <sprite>sprites\spr_boggle</sprite>
+    <sprite>sprites\spr_diceroll</sprite>
     <sprite>sprites\spr_boggleappear</sprite>
     <sprite>sprites\spr_boggleunder</sprite>
     <sprite>sprites\spr_star</sprite>
@@ -34,6 +35,8 @@
     <object>objects\obj_rival</object>
     <object>objects\obj_dialoguetest</object>
     <object>objects\obj_boardanim</object>
+    <object>objects\obj_dice</object>
+    <object>objects\obj_whiteoverlay</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roo_boardtest</room>

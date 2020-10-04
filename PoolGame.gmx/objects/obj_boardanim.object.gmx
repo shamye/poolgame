@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,12 +25,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>outline1y=0;
+            <string>instance_create(0,0,obj_whiteoverlay);
+
+outline1y=0;
 outline2y=0;
 created=false;
 canfade=false;
 blackalph=1;
 boggleappear=0;
+
+bogglescale=1;
+rollindex=0;
+circlescale=0;
+circlealpha=1;
+canscale=false;
+hasrolled=0;
+
+dice1=-1;
+dice2=-1;
+
+boggling=false
+boggled=false;
 </string>
           </argument>
         </arguments>
@@ -77,6 +92,53 @@ if outline2y&lt;-715 {
     boggleappear+=0.5;
     }
 }
+
+if boggleappear&gt;8 &amp;&amp; boggled=false {
+    if mouse_x&gt;312-64 &amp;&amp; mouse_y&gt;172-64 &amp;&amp; mouse_x&lt;312+64 &amp;&amp; mouse_y&lt;172+64 &amp;&amp; mouse_check_button(mb_left) {
+        bogglescale=lerp(bogglescale,0.95,0.05);
+    } else {
+        bogglescale=lerp(bogglescale,1,0.1);
+    }
+    if mouse_check_button_released(mb_left) {
+        bogglescale=1.2
+        boggling=true
+        circlealpha=1;
+        var diceroll1=irandom_range(1,6);
+        var diceroll2=irandom_range(1,6);
+        dice1=instance_create(312+irandom_range(-32,0),172+irandom_range(-32,32),obj_dice);
+        dice1.visible=false;
+        dice1.image_index=diceroll1-1;
+        dice1.image_angle=irandom_range(0,359);
+        dice2=instance_create(312+irandom_range(0,32),172+irandom_range(-32,32),obj_dice);
+        dice2.visible=false;
+        dice2.image_index=diceroll2-1;
+        dice2.image_angle=irandom_range(0,359);
+    }
+    if not mouse_check_button(mb_left) {
+        bogglescale=lerp(bogglescale,1,0.1);
+    }
+}
+
+if boggling=true {
+    if rollindex&lt;6 {
+        rollindex+=0.25
+    } else {
+        rollindex=0
+        hasrolled+=1;
+    }
+    if hasrolled &gt;=3 {
+        canscale=true
+    }
+    if canscale=true {
+        circlescale=lerp(circlescale,640,0.1);
+    }
+}
+
+if circlescale&gt;635 {
+    boggling=false;
+    boggled=true;
+    circlealpha=lerp(circlealpha,0,0.1);
+}
 </string>
           </argument>
         </arguments>
@@ -106,9 +168,16 @@ draw_sprite(spr_boardoutline1,0,0,outline1y);
 
 if boggleappear&gt;=6 {
     draw_sprite(spr_boggleunder,0,312,172)
-    draw_sprite_ext(spr_dice,3,312-32,172-32,1,1,24,c_white,1);
-    draw_sprite_ext(spr_dice,2,312+32,172+16,1,1,13,c_white,1);
-    draw_sprite(spr_boggle,0,312,172);
+    if boggling=false &amp;&amp; boggled=false{
+        draw_sprite_ext(spr_dice,5,312-20,172,1,1,0,c_white,1);
+        draw_sprite_ext(spr_dice,5,312+20,172,1,1,90,c_white,1);
+    } else if boggling=true &amp;&amp; boggled=false {
+        draw_sprite_ext(spr_diceroll,rollindex,312,172,1,1,0,c_white,1);
+    } else {
+        draw_sprite_ext(dice1.sprite_index,dice1.image_index,dice1.x,dice1.y,1,1,dice1.image_angle,c_white,1);
+        draw_sprite_ext(dice2.sprite_index,dice2.image_index,dice2.x,dice2.y,1,1,dice2.image_angle,c_white,1);
+    }
+    draw_sprite_ext(spr_boggle,0,312,172,bogglescale,bogglescale,0,c_white,1);
 }
 
 if boggleappear&lt;11 &amp;&amp; boggleappear&gt;0 {
@@ -118,6 +187,8 @@ if boggleappear&lt;11 &amp;&amp; boggleappear&gt;0 {
 draw_set_alpha(blackalph);
 draw_set_color(c_black);
 draw_rectangle(-16,-16,656,376,false);
+
+
 </string>
           </argument>
         </arguments>
