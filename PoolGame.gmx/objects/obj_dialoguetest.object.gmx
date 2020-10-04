@@ -31,6 +31,13 @@ current=0;
 count=0;
 
 shadowoffset=0;
+textboxoff=150;
+textboxalph=0;
+questionalph=1;
+
+destroy=false;
+
+selected=1;
 </string>
           </argument>
         </arguments>
@@ -53,13 +60,64 @@ shadowoffset=0;
             <kind>1</kind>
             <string>///Dialogue
 
+
 text[0]="Hey what's up."
 text[1]="Stuck in the pool? Yeah, it's tough huh."
 text[2]="Welp. Good luck out there."
+text[3]="..."
+text[4]="Please don't act so nonchalant about my issues."
+text[5]="Look, I can't help you."
+text[6]=-1 //this text prompt is a choice
+text[7]="Yes very sure."
+text[8]=-2 //jump to a different part
+text[9]="I'm Shammy."
+text[10]="..."
+text[11]="yeah"
+text[12]=-2
+text[13]="........ NO..."
+text[14]="I can swim."
+text[15]="I just... am having... fun.........."
+text[16]="..."
+text[17]=-2
+text[18]="ok cya."
+text[19]=-3 //close dialogue
+
+length[6]=4; //number of possible choices
+
+choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
+choice[6,2]="What's your name?";
+choice[6,3]="Don't tell me you're stuck too.";
+choice[6,4]="I'm gonna go find someone else.";
+
+choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
+choiceto[6,2]=9
+choiceto[6,3]=13
+choiceto[6,4]=18
+
+choiceto[8,1]=6 
+choiceto[12,1]=6
+choiceto[17,1]=6
 
 name[0]="Shammy";
 name[1]="Shammy";
 name[2]="Shammy";
+name[3]="Protag";
+name[4]="Protag";
+name[5]="Shammy";
+name[6]="Shammy";
+name[7]="Shammy";
+name[8]="Shammy";
+name[9]="Shammy";
+name[10]="Shammy";
+name[11]="Shammy";
+name[12]="Shammy";
+name[13]="Shammy";
+name[14]="Shammy";
+name[15]="Shammy";
+name[16]="Shammy";
+name[17]="Shammy";
+name[18]="Shammy";
+name[19]="Shammy";
 </string>
           </argument>
         </arguments>
@@ -84,6 +142,41 @@ name[2]="Shammy";
             <kind>1</kind>
             <string>float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
+
+
+if destroy=false {
+    textboxoff = lerp(textboxoff,0,0.2);
+    textboxalph=1-textboxoff/150
+} else {
+    textboxoff = lerp(textboxoff,300,0.2);
+    textboxalph=1-textboxoff/250
+    
+    if textboxoff&gt;249 {
+        instance_destroy();
+    }
+}
+
+if text[current]=-1 {
+    questionalph=lerp(questionalph,1,0.1);
+    if keyboard_check_pressed(vk_down) {
+        if selected&gt;1 {
+            selected-=1;
+        } else {
+            selected=length[current];
+        }
+    }
+    if keyboard_check_pressed(vk_up) {
+        if selected&lt;length[current] {
+            selected+=1;
+        } else {
+            selected=1;
+        }
+    }
+}
+
+if text[current]=-3 {
+    destroy=true;
+}
 </string>
           </argument>
         </arguments>
@@ -108,24 +201,66 @@ shadowoffset=lerp(shadowoffset,8,0.1);
             <kind>1</kind>
             <string>count+=0.5;
 
+draw_set_alpha(textboxalph);
 var wave = degtorad(float);
 draw_set_color(make_color_rgb(106,89,119));
-draw_talkbubble(shadowoffset,shadowoffset,wave);
-draw_roundrect_ext(84+shadowoffset,190+shadowoffset,255+shadowoffset,224+shadowoffset,48,48,false);
+draw_talkbubble(shadowoffset,shadowoffset+textboxoff/2,wave);
+draw_roundrect_ext(84+shadowoffset,190+shadowoffset+textboxoff/2,255+shadowoffset,224+shadowoffset+textboxoff/2,48,48,false);
+if text[current]=-1 {
+    draw_set_color(merge_color(c_white,c_ltgray,questionalph));
+    draw_talkbubble(0,0+textboxoff,wave);
+    draw_roundrect_ext(84,190+textboxoff,255,224+textboxoff,48,48,false);
+    
+    draw_set_color(merge_color(make_color_rgb(61,59,63),make_color_rgb(61*1.5,59*1.5,63*1.5),questionalph));
+    draw_set_font(fnt_coiny);
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_middle);
+} else {
+    draw_set_color(c_white);
+    draw_talkbubble(0,0+textboxoff,wave);
+    draw_roundrect_ext(84,190+textboxoff,255,224+textboxoff,48,48,false);
+    
+    draw_set_color(make_color_rgb(61,59,63));
+    draw_set_font(fnt_coiny);
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_middle);
+}
+if text[current]=-1 {
+    count=string_length(text[current-1])+1;
+    draw_text(96,207+textboxoff,name[current-1]);
+
+    draw_set_font(fnt_baloo);
+    draw_set_halign(fa_left);
+    draw_text_ext(119,246+textboxoff,string_copy(text[current-1],0,count),-1,397);
+    
+    draw_set_alpha(textboxalph);
+    for (var i=1; i&lt;=length[current]; i++) {
+        if selected=i {
+            draw_set_color(make_color_rgb(106,89,119));
+            draw_roundrect_ext(300+shadowoffset,0+360-72*i+textboxoff+shadowoffset,620+shadowoffset,64+360-72*i+textboxoff+shadowoffset,48,48,false);
+            draw_set_color(make_color_rgb(61,59,63));
+            draw_roundrect_ext(300,0+360-72*i+textboxoff,620,64+360-72*i+textboxoff,48,48,false);
+            draw_set_color(c_white);
+            draw_text_ext(320,32+360-72*i+textboxoff,choice[current,i],-1,260);
+        } else {
+            draw_set_color(make_color_rgb(106,89,119));
+            draw_roundrect_ext(320+shadowoffset,0+360-72*i+textboxoff+shadowoffset,620+shadowoffset,64+360-72*i+textboxoff+shadowoffset,48,48,false);
+            draw_set_color(c_white);
+            draw_roundrect_ext(320,0+360-72*i+textboxoff,620,64+360-72*i+textboxoff,48,48,false);
+            draw_set_color(make_color_rgb(61,59,63));
+            draw_text_ext(340,32+360-72*i+textboxoff,choice[current,i],-1,260);
+        }
+    }
+} else {
+    draw_text(96,207+textboxoff,name[current]);
+    
+    draw_set_font(fnt_baloo);
+    draw_set_halign(fa_left);
+    draw_text_ext(119,246+textboxoff,string_copy(text[current],0,count),-1,397);
+}
+
+
 draw_set_color(c_white);
-draw_talkbubble(0,0,wave);
-draw_roundrect_ext(84,190,255,224,48,48,false);
-
-
-draw_set_color(make_color_rgb(61,59,63));
-draw_set_font(fnt_coiny);
-draw_set_halign(fa_left);
-draw_set_valign(fa_middle);
-draw_text(96,207,name[current]);
-
-draw_set_font(fnt_baloo);
-draw_set_halign(fa_left);
-draw_text_ext(119,246,string_copy(text[current],0,count),-1,397);
 </string>
           </argument>
         </arguments>
@@ -148,11 +283,33 @@ draw_text_ext(119,246,string_copy(text[current],0,count),-1,397);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if count &lt; string_length(text[current]) {
-    count=string_length(text[current])
-} else {
-    count=0;
-    current+=1;
+            <string>if destroy=false{
+    if count &lt; string_length(text[current]) {
+        count=string_length(text[current])
+    } else {
+        if current+1 = array_length_1d(text) || text[current]=-3 {
+            destroy=true;
+        } else {
+            if text[current+1]=-2 {
+                current=choiceto[current+1,1];
+            } else {
+                if text[current]=-1
+                {
+                    current=choiceto[current,selected];
+                } else {
+                    current+=1
+                }
+            }
+            count=0;
+            textoffset=0;
+            selected=1;
+            questionalph=0;
+            if name[current-1]!=name[current] {
+                textboxoff=150;
+                shadowoffset=0;
+            }
+        }
+    }
 }
 </string>
           </argument>
