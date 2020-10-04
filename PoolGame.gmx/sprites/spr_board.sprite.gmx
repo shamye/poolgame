@@ -7,10 +7,10 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>1</bbox_left>
+  <bbox_left>0</bbox_left>
   <bbox_right>31</bbox_right>
-  <bbox_top>3</bbox_top>
-  <bbox_bottom>30</bbox_bottom>
+  <bbox_top>2</bbox_top>
+  <bbox_bottom>28</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -25,5 +25,25 @@
     <frame index="2">images\spr_board_2.png</frame>
     <frame index="3">images\spr_board_3.png</frame>
     <frame index="4">images\spr_board_4.png</frame>
+    <frame index="5">images\spr_board_5.png</frame>
+    <frame index="6">images\spr_board_6.png</frame>
+    <frame index="7">images\spr_board_7.png</frame>
+    <frame index="8">images\spr_board_8.png</frame>
+    <frame index="9">images\spr_board_9.png</frame>
+    <frame index="10">images\spr_board_10.png</frame>
+    <frame index="11">images\spr_board_11.png</frame>
+    <frame index="12">images\spr_board_12.png</frame>
+    <frame index="13">images\spr_board_13.png</frame>
+    <frame index="14">images\spr_board_14.png</frame>
+    <frame index="15">images\spr_board_15.png</frame>
+    <frame index="16">images\spr_board_16.png</frame>
+    <frame index="17">images\spr_board_17.png</frame>
+    <frame index="18">images\spr_board_18.png</frame>
+    <frame index="19">images\spr_board_19.png</frame>
+    <frame index="20">images\spr_board_20.png</frame>
+    <frame index="21">images\spr_board_21.png</frame>
+    <frame index="22">images\spr_board_22.png</frame>
+    <frame index="23">images\spr_board_23.png</frame>
+    <frame index="24">images\spr_board_24.png</frame>
   </frames>
 </sprite>

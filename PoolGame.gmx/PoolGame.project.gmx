@@ -9,6 +9,13 @@
     <sprite>sprites\spr_protagonist</sprite>
     <sprite>sprites\spr_rival</sprite>
     <sprite>sprites\spr_board</sprite>
+    <sprite>sprites\spr_boardoutline1</sprite>
+    <sprite>sprites\spr_boardoutline2</sprite>
+    <sprite>sprites\spr_boggle</sprite>
+    <sprite>sprites\spr_boggleappear</sprite>
+    <sprite>sprites\spr_boggleunder</sprite>
+    <sprite>sprites\spr_star</sprite>
+    <sprite>sprites\spr_dice</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_water</background>
@@ -26,10 +33,11 @@
     <object>objects\obj_protagonist</object>
     <object>objects\obj_rival</object>
     <object>objects\obj_dialoguetest</object>
+    <object>objects\obj_boardanim</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\roo_dialoguetest</room>
     <room>rooms\roo_boardtest</room>
+    <room>rooms\roo_dialoguetest</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
