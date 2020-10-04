@@ -39,8 +39,8 @@
     <object>objects\obj_whiteoverlay</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\roo_boardtest</room>
     <room>rooms\roo_dialoguetest</room>
+    <room>rooms\roo_boardtest</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
