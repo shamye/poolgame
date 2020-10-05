@@ -53,6 +53,7 @@
   <instances>
     <instance objName="obj_wall" x="0" y="0" name="inst_1B5D44BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fadein" x="96" y="224" name="inst_626E7AEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rivalcontrol" x="192" y="256" name="inst_879F3E90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

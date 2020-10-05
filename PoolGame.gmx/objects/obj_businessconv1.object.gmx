@@ -38,6 +38,7 @@ questionalph=1;
 destroy=false;
 
 selected=1;
+success=false;
 </string>
           </argument>
         </arguments>
@@ -58,7 +59,8 @@ selected=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_sound(bgm_main);
+            <string>audio_stop_all()
+audio_sound_gain(bgm_business,1,0);
 audio_play_sound(bgm_business,1,true);
 
 player=instance_create(320-92,180-64,obj_player);
@@ -67,44 +69,60 @@ opp=instance_create(320+92,180-64,obj_business);
 ///Dialogue
 
 
-text[0]="Placeholder."
+text[0]="&gt; You bump into a man hunched over a computer with your inner tube."
+text[1]="Watch where you’re going, you almost knocked my monitor into the water!"
+text[2]="I’m sorry, I didn’t mean to...wait, your what?"
+text[3]=-1
+text[4]="Do I look like an IT guy to you?"
+text[5]="Go flag down one of them and ask, I am far too busy to entertain your inane questions."
+text[6]="Wait, this park has an IT department? Isn’t that like, an office thing?"
+text[7]="Anything with a sufficient amount of technology needs an IT department, it keeps everything running smoothly."
+text[8]="Technology in a water park?"
+text[9]="Other water parks may be too primitive to fully utilize the potential of technology, but it is necessary in order to allow us to innovate."
+text[10]="Those DSLK hubs that they keep installing everywhere also error out way too easily, so we need somebody on hand in order to do a system restore."
+text[11]="Of course, I could do it myself, but my time is far too important to spend on menial tasks."
+text[12]="What does DSLK stand for?"
+text[13]="I wish I knew..."
+text[14]="Look, just leave me alone. I need to get this done like yesterday."
+text[15]=-3
+text[16]="No, I cannot because I am VERY busy."
+text[17]="It’ll be fun! Come on, play a game and relieve some stress."
+text[18]="Everyone can use a break sometimes."
+text[19]="I don’t BELIEVE in breaks."
+text[20]="Now stop bothering me."
+text[21]="&gt;He shoves you away and you float further down the lazy river."
+text[22]=-3
 
-length[6]=4; //number of possible choices
+choice[3,1]="How do you have a computer set up in a pool?"
+choice[3,2]="Can you play games on it? Do you have that space pinball one?"
+choiceto[3,1]=4;
+choiceto[3,2]=16;
 
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
+length[3]=2;
 
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]=""
+name[1]="Sute"
+name[2]=obj_varhold.p_name;
+name[3]=obj_varhold.p_name;
+name[4]="Sute"
+name[5]="Sute"
+name[6]=obj_varhold.p_name;
+name[7]="Sute"
+name[8]=obj_varhold.p_name;
+name[9]="Sute"
+name[10]="Sute"
+name[11]="Sute"
+name[12]=obj_varhold.p_name;
+name[13]="Sute"
+name[14]="Sute"
+name[15]="Sute"
+name[16]="Sute"
+name[17]=obj_varhold.p_name;
+name[18]=obj_varhold.p_name;
+name[19]="Sute"
+name[20]="Sute"
+name[21]=""
+name[22]=""
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -126,6 +144,10 @@ sound[16]=snd_wind;
 sound[17]=snd_wind;
 sound[18]=snd_wind;
 sound[19]=snd_wind;
+sound[20]=snd_wind;
+sound[21]=snd_wind;
+sound[22]=snd_wind;
+
 </string>
           </argument>
         </arguments>
@@ -151,6 +173,10 @@ sound[19]=snd_wind;
             <string>inst=instance_create(0,0,obj_fadeout);
 inst.alarm[0]=60;
 inst.roomto=roo_boardtest;
+audio_sound_gain(bgm_business,0,1000);
+if success=true{
+    obj_varhold.businessprog+=1;
+}
 </string>
           </argument>
         </arguments>
@@ -173,7 +199,9 @@ inst.roomto=roo_boardtest;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>if current&gt;4 &amp;&amp; current&lt;15 then {success=true}
+
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 
@@ -317,7 +345,7 @@ if text[current]=-1 {
 
     draw_set_font(fnt_baloo);
     draw_set_halign(fa_left);
-    draw_set_valign(fa_top);
+    draw_set_valign(fa_middle);
     draw_text_ext(119,246+textboxoff,string_copy(text[current-1],0,count),-1,397);
     
     draw_set_alpha(textboxalph);

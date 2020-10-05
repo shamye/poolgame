@@ -58,87 +58,34 @@ selected=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Dialogue
+            <string>text[0]="&gt; You bump into a man hunched over a computer with your inner tube."
+text[1]="Watch where you’re going, you almost knocked my monitor into the water!"
+text[2]="I’m sorry, I didn’t mean to...wait, your what?"
+text[3]=-1
+text[4]="Do I look like an IT guy to you?"
+text[5]="Go flag down one of them and ask, I am far too busy to entertain your inane questions."
+text[6]="Wait, this park has an IT department? Isn’t that like, an office thing?"
+text[7]="Anything with a sufficient amount of technology needs an IT department, it keeps everything running smoothly."
+text[8]="Technology in a water park?"
+text[9]="Other water parks may be too primitive to fully utilize the potential of technology, but it is necessary in order to allow us to innovate."
+text[10]="Those DSLK hubs that they keep installing everywhere also error out way too easily, so we need somebody on hand in order to do a system restore."
+text[11]="Of course, I could do it myself, but my time is far too important to spend on menial tasks."
+text[12]="What does DSLK stand for?"
+text[13]="I wish I knew..."
+text[14]="Look, just leave me alone. I need to get this done like yesterday."
+text[15]=-3
+text[16]="No, I cannot because I am VERY busy."
+text[17]="It’ll be fun! Come on, play a game and relieve some stress."
+text[18]="Everyone can use a break sometimes."
+text[19]="I don’t BELIEVE in breaks."
+text[20]="Now stop bothering me."
+text[21]="&gt;He shoves you away and you float further down the lazy river."
+text[22]=-3
 
-
-text[0]="Hey what's up."
-text[1]="Stuck in the pool? Yeah, it's tough huh."
-text[2]="Welp. Good luck out there."
-text[3]="..."
-text[4]="Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues."
-text[5]="Look, I can't help you."
-text[6]=-1 //this text prompt is a choice
-text[7]="Yes very sure."
-text[8]=-2 //jump to a different part
-text[9]="I'm Shammy."
-text[10]="..."
-text[11]="yeah"
-text[12]=-2
-text[13]="........ NO..."
-text[14]="I can swim."
-text[15]="I just... am having... fun.........."
-text[16]="..."
-text[17]=-2
-text[18]="ok cya."
-text[19]=-3 //close dialogue
-
-length[6]=4; //number of possible choices
-
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
-
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
-
-sound[0]=snd_wind;
-sound[1]=snd_wind;
-sound[2]=snd_wind;
-sound[3]=snd_wind;
-sound[4]=snd_wind;
-sound[5]=snd_wind;
-sound[6]=snd_wind;
-sound[7]=snd_wind;
-sound[8]=snd_wind;
-sound[9]=snd_wind;
-sound[10]=snd_wind;
-sound[11]=snd_wind;
-sound[12]=snd_wind;
-sound[13]=snd_wind;
-sound[14]=snd_wind;
-sound[15]=snd_wind;
-sound[16]=snd_wind;
-sound[17]=snd_wind;
-sound[18]=snd_wind;
-sound[19]=snd_wind;
+choice[3,1]="How do you have a computer set up in a pool?"
+choice[3,2]="Can you play games on it? Do you have that space pinball one?"
+choiceto[3,1]=4;
+choiceto[3,2]=16;
 </string>
           </argument>
         </arguments>

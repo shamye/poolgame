@@ -66,7 +66,11 @@ if distance_to_point(obj_boardanim.spots[current_pos].x,obj_boardanim.spots[curr
     audio_play_sound(snd_type,1,false);
     if (current_pos!=obj_varhold.p_pos)
     {
-        current_pos+=1;
+        if current_pos&lt;25 {
+            current_pos+=1;
+        } else {
+            current_pos=1;
+        }
     } else {
         hasplayed2=true;
     }

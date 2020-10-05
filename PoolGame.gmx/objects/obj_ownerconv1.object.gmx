@@ -38,6 +38,7 @@ questionalph=1;
 destroy=false;
 
 selected=1;
+success=false;
 </string>
           </argument>
         </arguments>
@@ -59,6 +60,7 @@ selected=1;
           <argument>
             <kind>1</kind>
             <string>audio_stop_sound(bgm_main);
+audio_sound_gain(bgm_owner,1,0);
 audio_play_sound(bgm_owner,1,true);
 
 player=instance_create(320-92,180-64,obj_player);
@@ -67,44 +69,84 @@ opp=instance_create(320+92,180-64,obj_owner);
 ///Dialogue
 
 
-text[0]="Placeholder."
+text[0]="Why hey there sonny! Are you enjoying the park?"
+text[1]="Well about that, I’m kind of stuck here. Do you think you could help me out?"
+text[2]="Oh the young ones are so amusing nowadays. Of course I won’t! That’s part of the fun after all!"
+text[3]="Check this out, I can balance myself on my innertube with one hand see."
+text[4]="That’s nice, but I’d really like to leave now."
+text[5]="Come now sonny, why would you be here if you didn’t want to have fun."
+text[6]="Forget it, I’m out of here! There’s nothing a crazy old man could do for me anyway!"
+text[7]="Oh but there is! As you can see I am the park owner. I can do whatever I please!"
+text[8]="Alright you got me, what do I have to do so that you can let me out?"
+text[9]="Now you are speaking my language!"
+text[10]="Alright we are going to play a little game here. If you get three points I’ll let you out!"
+text[11]="I’m ready, hit me with your best shot!"
+text[12]="Who named me?"
+text[13]="You can’t be serious!"
+text[14]="Well sonny, are you going to guess?"
+text[15]=-1
 
-length[6]=4; //number of possible choices
+text[16]="Sorry, not sorry! I have no use for money hungry relatives!"
+text[17]="I guess it’s time for your penalty?"
+text[18]="Wait! You never mentioned a penalty!"
+text[19]="Buh bye! Remember not to sue!"
+text[20]="&gt; He pushes a button and suddenly you are swept away by the current."
+text[21]=-3
 
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
+text[22]="That’s right sonny! I’m rich! I can do whatever I want!"
+text[23]="What a ridiculous name! Why would anyone in the right mind even name themselves something like that!"
+text[24]="Kid, look around you! This all wouldn’t have been possibly without people like me."
+text[25]="Anyway be grateful. You have one point so far. Are you ready for the next game?"
+text[26]="Fine whatever, this game is stupid though."
+text[27]="Tsk tsk tsk for that I’m going to have to penalize you. Not having fun is against the rules!"
+text[28]="Wait what?"
+text[29]="Take a lap sonny, maybe it’ll put you in a good mood!"
+text[30]="&gt; He presses a button and you are swept away by a strong current."
+text[31]=-3
 
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
+choice[15,1]="Your parents of course!"
+choice[15,2]="You did?"
+choice[15,3]="Maybe your significant other?"
+choiceto[15,1]=16;
+choiceto[15,2]=22;
+choiceto[15,3]=16;
 
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
+length[15]=3;
 
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]="Mark Owna"
+name[1]=obj_varhold.p_name;
+name[2]="Mark"
+name[3]="Mark"
+name[4]=obj_varhold.p_name;
+name[5]="Mark"
+name[6]=obj_varhold.p_name;
+name[7]="Mark"
+name[8]=obj_varhold.p_name;
+name[9]="Mark"
+name[10]="Mark"
+name[11]=obj_varhold.p_name;
+name[12]="Mark"
+name[13]=obj_varhold.p_name;
+name[14]="Mark"
+name[15]="Mark"
+
+name[16]="Mark"
+name[17]="Mark"
+name[18]=obj_varhold.p_name;
+name[19]="Mark"
+name[20]=""
+name[21]=""
+
+name[22]="Mark"
+name[23]=obj_varhold.p_name;
+name[24]="Mark"
+name[25]="Mark"
+name[26]=obj_varhold.p_name;
+name[27]="Mark"
+name[28]=obj_varhold.p_name;
+name[29]="Mark"
+name[30]=""
+name[31]=""
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -126,6 +168,18 @@ sound[16]=snd_wind;
 sound[17]=snd_wind;
 sound[18]=snd_wind;
 sound[19]=snd_wind;
+sound[20]=snd_wind;
+sound[21]=snd_wind;
+sound[22]=snd_wind;
+sound[23]=snd_wind;
+sound[24]=snd_wind;
+sound[25]=snd_wind;
+sound[26]=snd_wind;
+sound[27]=snd_wind;
+sound[28]=snd_wind;
+sound[29]=snd_wind;
+sound[30]=snd_wind;
+sound[31]=snd_wind;
 </string>
           </argument>
         </arguments>
@@ -151,6 +205,10 @@ sound[19]=snd_wind;
             <string>inst=instance_create(0,0,obj_fadeout);
 inst.alarm[0]=60;
 inst.roomto=roo_boardtest;
+audio_sound_gain(bgm_owner,0,1000);
+if success=true{
+    obj_varhold.ownerprog+=1;
+}
 </string>
           </argument>
         </arguments>
@@ -173,7 +231,9 @@ inst.roomto=roo_boardtest;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>if current&gt;22 then {success=true};
+
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 
@@ -317,7 +377,7 @@ if text[current]=-1 {
 
     draw_set_font(fnt_baloo);
     draw_set_halign(fa_left);
-    draw_set_valign(fa_top);
+    draw_set_valign(fa_middle);
     draw_text_ext(119,246+textboxoff,string_copy(text[current-1],0,count),-1,397);
     
     draw_set_alpha(textboxalph);

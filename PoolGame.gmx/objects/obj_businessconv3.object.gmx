@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_sound(bgm_main);
-audio_play_sound(bgm_business);
-
-float =0;
+            <string>float =0;
 
 current=0;
 count=0;
@@ -41,6 +38,7 @@ questionalph=1;
 destroy=false;
 
 selected=1;
+success=false;
 </string>
           </argument>
         </arguments>
@@ -61,7 +59,8 @@ selected=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_sound(bgm_main);
+            <string>audio_stop_all()
+audio_sound_gain(bgm_business,1,0);
 audio_play_sound(bgm_business,1,true);
 
 player=instance_create(320-92,180-64,obj_player);
@@ -70,44 +69,54 @@ opp=instance_create(320+92,180-64,obj_business);
 ///Dialogue
 
 
-text[0]="Placeholder."
+text[0]="&gt;You see the business man attempting to give his computer percussive maintenance."
+text[1]="What’s wrong?"
+text[2]="Are you blind? This hunk of junk hasn’t been working all day!"
+text[3]="But weren’t you using it earlier...?"
+text[4]="No, I was TRYING to get it working."
+text[5]="I didn’t want to admit it, but I don’t know the first thing about computers..."
+text[6]=-1
+text[7]="It’s okay, not everyone has to know how to do everything."
+text[8]="For example, I don’t even know how to swim."
+text[9]="Why did you even come to a water park?"
+text[10]="Look, I thought it would be fun..."
+text[11]="Anyways, why not ask someone to fix your computer?"
+text[12]="As much as I don’t like seeming incompetent, it would be more productive to ask someone else for help."
+text[13]="Why don’t you help me get my computer out of the pool? If I get off this inner tube first, there won’t be anything left to support the weight of the desk and it’ll fall to the bottom."
+text[14]="Sure, if you help me get out first."
+text[15]=-3
+text[16]="How am I supposed to RELAX like this?"
+text[17]="I’ve never once relaxed in my life, and I’m not going to start now!"
+text[18]="Any time not productive is time wasted, and time is money!"
+text[19]=-3
 
-length[6]=4; //number of possible choices
+choice[6,1]="Maybe you should see if someone can fix your computer."
+choice[6,2]="Just relax, it’s what this place is all about!"
+choiceto[6,1]=7
+choiceto[6,2]=16
 
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
+length[6]=2;
 
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]=""
+name[1]=obj_varhold.p_name;
+name[2]="Sute"
+name[3]=obj_varhold.p_name;
+name[4]="Sute"
+name[5]="Sute"
+name[6]="Sute"
+name[7]=obj_varhold.p_name;
+name[8]=obj_varhold.p_name;
+name[9]="Sute"
+name[10]=obj_varhold.p_name;
+name[11]=obj_varhold.p_name;
+name[12]="Sute"
+name[13]="Sute"
+name[14]=obj_varhold.p_name;
+name[15]=obj_varhold.p_name;
+name[16]="Sute"
+name[17]="Sute"
+name[18]="Sute"
+name[19]="Sute"
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -153,7 +162,12 @@ sound[19]=snd_wind;
             <kind>1</kind>
             <string>inst=instance_create(0,0,obj_fadeout);
 inst.alarm[0]=60;
-inst.roomto=roo_businessend;
+if success=true{
+    inst.roomto=roo_businessend;
+    obj_varhold.businessprog+=1;
+} else {
+    inst.roomto=roo_boardtest;
+}
 </string>
           </argument>
         </arguments>
@@ -176,7 +190,9 @@ inst.roomto=roo_businessend;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>if current&gt;7 &amp;&amp; current&lt;14 then {success=true}
+
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 
@@ -320,7 +336,7 @@ if text[current]=-1 {
 
     draw_set_font(fnt_baloo);
     draw_set_halign(fa_left);
-    draw_set_valign(fa_top);
+    draw_set_valign(fa_middle);
     draw_text_ext(119,246+textboxoff,string_copy(text[current-1],0,count),-1,397);
     
     draw_set_alpha(textboxalph);

@@ -38,6 +38,7 @@ questionalph=1;
 destroy=false;
 
 selected=1;
+success=false;
 </string>
           </argument>
         </arguments>
@@ -58,7 +59,8 @@ selected=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_sound(bgm_main);
+            <string>audio_stop_all()
+audio_sound_gain(bgm_buff,1,0);
 audio_play_sound(bgm_buff,1,true);
 
 player=instance_create(320-92,180-64,obj_player);
@@ -151,6 +153,10 @@ sound[19]=snd_wind;
             <string>inst=instance_create(0,0,obj_fadeout);
 inst.alarm[0]=60;
 inst.roomto=roo_boardtest;
+audio_sound_gain(bgm_buff,0,1000);
+if success=true{
+    obj_varhold.buffprog+=1;
+}
 </string>
           </argument>
         </arguments>

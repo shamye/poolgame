@@ -10,9 +10,16 @@
     <sound>sound\snd_down</sound>
     <sound>sound\bgm_intro</sound>
     <sound>sound\bgm_main</sound>
+    <sound>sound\bgm_old</sound>
+    <sound>sound\bgm_business</sound>
+    <sound>sound\bgm_owner</sound>
+    <sound>sound\bgm_buff</sound>
+    <sound>sound\bgm_frog</sound>
+    <sound>sound\bgm_rival</sound>
     <sound>sound\snd_type</sound>
     <sound>sound\snd_tuberhaha</sound>
     <sound>sound\snd_tuberlikeandsub</sound>
+    <sound>sound\snd_diceroll</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_playerpiece</sprite>
@@ -33,6 +40,11 @@
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_shugor</sprite>
     <sprite>sprites\spr_rival</sprite>
+    <sprite>sprites\spr_old</sprite>
+    <sprite>sprites\spr_business</sprite>
+    <sprite>sprites\spr_owner</sprite>
+    <sprite>sprites\spr_buff</sprite>
+    <sprite>sprites\spr_frog</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_water</background>
@@ -50,6 +62,7 @@
     <object>objects\obj_playerpiece</object>
     <object>objects\obj_rivalpiece</object>
     <object>objects\obj_dialoguetest</object>
+    <object>objects\obj_noconv</object>
     <object>objects\obj_businessconv1</object>
     <object>objects\obj_businessconv2</object>
     <object>objects\obj_businessconv3</object>
@@ -98,6 +111,12 @@
     <object>objects\obj_owner</object>
     <object>objects\obj_buff</object>
     <object>objects\obj_frog</object>
+    <object>objects\obj_businesscontrol</object>
+    <object>objects\obj_oldcontrol</object>
+    <object>objects\obj_ownercontrol</object>
+    <object>objects\obj_buffcontrol</object>
+    <object>objects\obj_frogcontrol</object>
+    <object>objects\obj_rivalcontrol</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roo_logo</room>
@@ -108,10 +127,17 @@
     <room>rooms\roo_intro2</room>
     <room>rooms\roo_noconv</room>
     <room>rooms\roo_oldconv</room>
+    <room>rooms\roo_oldend</room>
     <room>rooms\roo_businessconv</room>
+    <room>rooms\roo_businessend</room>
     <room>rooms\roo_ownerconv</room>
+    <room>rooms\roo_ownerend</room>
+    <room>rooms\roo_buffconv</room>
+    <room>rooms\roo_buffend</room>
     <room>rooms\roo_frogconv</room>
+    <room>rooms\roo_frogend</room>
     <room>rooms\roo_rivalconv</room>
+    <room>rooms\roo_rivalend</room>
     <room>rooms\roo_boardtest</room>
     <room>rooms\roo_dialoguetest</room>
   </rooms>

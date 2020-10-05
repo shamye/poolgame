@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_sound(bgm_main);
-audio_play_sound(bgm_business);
-
-float =0;
+            <string>float =0;
 
 current=0;
 count=0;
@@ -64,65 +61,23 @@ selected=1;
             <string>///Dialogue
 
 
-text[0]="Placeholder."
+text[0]="&gt;He drags your inner tube to the side of the pool, giving you a chance to climb out."
+text[1]="&gt;You help him get his computer out, afterwards he even gives you a park voucher for a free ice cream cone as thanks."
+text[2]="Achieved Sute N. Tyes Ending"
+text[3]="Press Spacebar to exit the game."
+text[4]=-3
 
-length[6]=4; //number of possible choices
-
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
-
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]=""
+name[1]=""
+name[2]=""
+name[3]=""
+name[4]=""
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
 sound[2]=snd_wind;
 sound[3]=snd_wind;
 sound[4]=snd_wind;
-sound[5]=snd_wind;
-sound[6]=snd_wind;
-sound[7]=snd_wind;
-sound[8]=snd_wind;
-sound[9]=snd_wind;
-sound[10]=snd_wind;
-sound[11]=snd_wind;
-sound[12]=snd_wind;
-sound[13]=snd_wind;
-sound[14]=snd_wind;
-sound[15]=snd_wind;
-sound[16]=snd_wind;
-sound[17]=snd_wind;
-sound[18]=snd_wind;
-sound[19]=snd_wind;
 </string>
           </argument>
         </arguments>

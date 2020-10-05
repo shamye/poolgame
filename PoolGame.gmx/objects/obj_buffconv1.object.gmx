@@ -38,6 +38,7 @@ questionalph=1;
 destroy=false;
 
 selected=1;
+success=false;
 </string>
           </argument>
         </arguments>
@@ -58,7 +59,8 @@ selected=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_sound(bgm_main);
+            <string>audio_stop_all()
+audio_sound_gain(bgm_buff,1,0);
 audio_play_sound(bgm_buff,1,true);
 
 player=instance_create(320-92,180-64,obj_player);
@@ -66,45 +68,143 @@ opp=instance_create(320+92,180-64,obj_buff);
 
 ///Dialogue
 
+text[0]="Heyy, dude! You mind telling me the secret is around here?"
+text[1]="“Do you mean the giant frogs, loop da loop, or the fact that this waterpark is still in business despite the many health code violations?"
+text[2]="...What? No man, I mean these sick tans! How’d you guys manage to capture such a perfect orange? It’s making me a little jealous!"
+text[3]=-1
 
-text[0]="Placeholder."
+choice[3,1]="Orange?"
+choice[3,2]="I used a jar."
+choice[3,3]="Trust me, you don’t need to be jealous."
 
-length[6]=4; //number of possible choices
+length[3]=3;
+choiceto[3,1]=4;
+choiceto[3,2]=7;
+choiceto[3,3]=13;
 
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
+text[4]="Yeah, the people, the sky, even the water is definitely a lot more orange than I remember. You telling me you guys tanned this whole pool without letting me in on it?"
+text[5]="Tanned the pool- seriously, what are you on about? There’s nothing orange around here!"
+text[6]=-2
 
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
+choiceto[6,1]=16
 
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
+text[7]="Aha! I knew it! Where else would you keep the perfect tan but in a jar? I’ve been letting all of mine go to waste!"
+text[8]="Yeah, you have to make sure to close those things up tight."
+text[9]="Right, right… shoot! I haven’t been refrigerating them either! I’ll see you later little guy, I gotta get home pronto!"
+text[10]="Right, yeah- no, wait! Get back here!"
+text[11]="Sorry man, I can’t hear you! Jeez… where does this river end?"
+text[12]=-3
 
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+text[13]="Oh, don’t act all shy with me. Look at that tan, dude! It’s like a perfectly roasted Thanksgiving dinner!"
+text[14]="Uhh, sure. Just don’t eat me."
+text[15]=-2
+
+choiceto[15,1]=16
+
+text[16]="Trust me, I know a good tan when I see one. I’d even call myself an expert!"
+text[17]="What, an expert at staring at tanned people?"
+text[18]="You got it! I’ve studied so many tans that, in any person, I could see their perfect tanned self."
+text[19]="I’d teach them the steps to achieve such a tan, and they’d follow them to the T. The next day, they’d show up with the perfect bronze on their bodies. It was heartwarming, really!"
+text[20]="Sounds like you’re pretty proud of that."
+text[21]="Right, right, I am… but you know what I’ve figured out? Apparently, this whole time, I’ve never tried to tan myself! "
+text[22]="I can see exactly what it should look like in my head, but it never comes out right. It’s always so much more saturated than what I’d want."
+text[23]="So what you told all those other people was complete bogus?"
+text[24]="No, no, I saw it myself! The tans were all perfect. Yours, too, and everyone else here. How did you all manage to figure it out while I’ve been studying all this time, only to fail? Have I not studied enough?"
+text[25]=-1
+
+choice[25,1]="The tans only look good to you."
+choice[25,2]="Maybe you should’ve just practiced, instead."
+choice[25,3]="Yeah, I’ve studied for at least 5 years to get this sucker."
+choice[25,4]="Dude, just take your sunglasses off."
+length[25]=4;
+choiceto[25,1]=26;
+choiceto[25,2]=30;
+choiceto[25,3]=34;
+choiceto[25,4]=39;
+
+text[26]="Wait, what? Are you calling me crazy?"
+text[27]="No, your sunglasses. They’re orange. They probably just made everyone look more tan to you."
+text[28]="Wait, seriously? *removes sunglasses*"
+text[29]=-2
+choiceto[29,1]=42;
+
+text[30]="Wait, you mean just looking at everyone else wasn’t enough?"
+text[31]="Yeah, you’re wearing orange sunglasses."
+text[32]="You kidding me!? It’s all been wrong this whole time? Lemme see this… *removes sunglasses*"
+text[33]=-2
+choiceto[33,1]=42;
+
+text[34]="Gahh, that’s just what I was worried about! Guess I’m back to the books for this one."
+text[35]="Yeah, sorry man. It is how it is."
+text[36]="Haha, just you wait, bro! I’ll come back again with the best tan you’ve seen in your life!"
+text[37]="Hey, wait up! I had something to ask you!"
+text[38]=-3
+
+text[39]="Wait, why?"
+text[40]="They’re orange."
+text[41]="Orange? Like a- oh. *removes sunglasses*"
+
+text[42]="Oh my god, would you look at that!"
+text[43]="Yeah, I’m sorry man-"
+text[44]="This is the most vibrant, beautiful orange I have seen in my entire life! I’ve had these on the whole time?"
+text[45]="Uhh, yeah."
+text[46]="Duuude, that’s radical! I gotta find out how they captured such a perfect color into just one set of sunglasses! More importantly, I gotta figure out how to tan myself like this!"
+text[47]="I think you’re missing the point-"
+text[48]="Thanks for the help, little guy! I mean it, I’ll remember you!"
+text[49]="Wait, hang on a second! I need you to help me get outta here!"
+text[50]=-3
+
+name[0]="Tim Bo"
+name[1]=obj_varhold.p_name;
+name[2]="Tim"
+name[3]="Tim"
+name[4]="Tim"
+name[5]=obj_varhold.p_name;
+name[6]=obj_varhold.p_name;
+name[7]="Tim"
+name[8]=obj_varhold.p_name;
+name[9]="Tim"
+name[10]=obj_varhold.p_name;
+name[11]="Tim"
+name[12]="Tim"
+name[13]="Tim"
+name[14]=obj_varhold.p_name;
+name[15]="Tim"
+name[16]="Tim"
+name[17]=obj_varhold.p_name;
+name[18]="Tim"
+name[19]="Tim"
+name[20]=obj_varhold.p_name;
+name[21]="Tim"
+name[22]="Tim"
+name[23]=obj_varhold.p_name;
+name[24]="Tim"
+name[25]=obj_varhold.p_name;
+name[26]="Tim"
+name[27]=obj_varhold.p_name;
+name[28]="Tim"
+name[29]=obj_varhold.p_name;
+name[30]="Time"
+name[31]=obj_varhold.p_name;
+name[32]="Tim"
+name[33]=obj_varhold.p_name;
+name[34]="Tim"
+name[35]=obj_varhold.p_name;
+name[36]="Tim"
+name[37]=obj_varhold.p_name;
+name[38]=obj_varhold.p_name;
+name[39]="Tim"
+name[40]=obj_varhold.p_name;
+name[41]="Tim"
+name[42]="Tim"
+name[43]=obj_varhold.p_name;
+name[44]="Tim"
+name[45]=obj_varhold.p_name;
+name[46]="Tim"
+name[47]=obj_varhold.p_name;
+name[48]="Tim"
+name[49]=obj_varhold.p_name;
+name[50]=obj_varhold.p_name;
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -126,6 +226,36 @@ sound[16]=snd_wind;
 sound[17]=snd_wind;
 sound[18]=snd_wind;
 sound[19]=snd_wind;
+sound[20]=snd_wind;
+sound[21]=snd_wind;
+sound[22]=snd_wind;
+sound[23]=snd_wind;
+sound[24]=snd_wind;
+sound[25]=snd_wind;
+sound[26]=snd_wind;
+sound[27]=snd_wind;
+sound[28]=snd_wind;
+sound[29]=snd_wind;
+sound[30]=snd_wind;
+sound[31]=snd_wind;
+sound[32]=snd_wind;
+sound[33]=snd_wind;
+sound[34]=snd_wind;
+sound[35]=snd_wind;
+sound[36]=snd_wind;
+sound[37]=snd_wind;
+sound[38]=snd_wind;
+sound[39]=snd_wind;
+sound[40]=snd_wind;
+sound[41]=snd_wind;
+sound[42]=snd_wind;
+sound[43]=snd_wind;
+sound[45]=snd_wind;
+sound[46]=snd_wind;
+sound[47]=snd_wind;
+sound[48]=snd_wind;
+sound[49]=snd_wind;
+sound[50]=snd_wind;
 </string>
           </argument>
         </arguments>
@@ -151,6 +281,10 @@ sound[19]=snd_wind;
             <string>inst=instance_create(0,0,obj_fadeout);
 inst.alarm[0]=60;
 inst.roomto=roo_boardtest;
+audio_sound_gain(bgm_buff,0,1000);
+if success=true{
+    obj_varhold.buffprog+=1;
+}
 </string>
           </argument>
         </arguments>
@@ -173,7 +307,8 @@ inst.roomto=roo_boardtest;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>if current&gt;42 then {success=true}
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 

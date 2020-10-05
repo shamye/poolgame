@@ -61,44 +61,25 @@ selected=1;
             <string>///Dialogue
 
 
-text[0]="Placeholder."
+text[0]="&gt; You are placed into the cannon"
+text[1]="You’re fired! Ahahaaha!"
+text[2]="&gt; The cannon is fired"
+text[3]="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+text[4]="Don’t worry sonny this time I thought about safety and packed you a parachute!"
+text[5]="Don’t you forget not to sue now!"
+text[6]="Achieved Mark Owna's Ending"
+text[7]="Press Spacebar to exit the game."
+text[8]=-3
 
-length[6]=4; //number of possible choices
-
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
-
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]=""
+name[1]="Mark"
+name[2]=""
+name[3]=obj_varhold.p_name;
+name[4]="Mark"
+name[5]="Mark"
+name[6]=""
+name[7]=""
+name[8]=""
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -109,17 +90,6 @@ sound[5]=snd_wind;
 sound[6]=snd_wind;
 sound[7]=snd_wind;
 sound[8]=snd_wind;
-sound[9]=snd_wind;
-sound[10]=snd_wind;
-sound[11]=snd_wind;
-sound[12]=snd_wind;
-sound[13]=snd_wind;
-sound[14]=snd_wind;
-sound[15]=snd_wind;
-sound[16]=snd_wind;
-sound[17]=snd_wind;
-sound[18]=snd_wind;
-sound[19]=snd_wind;
 </string>
           </argument>
         </arguments>

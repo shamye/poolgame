@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not audio_is_playing(bgm_main) {
-    audio_play_sound(bgm_main,1,true);
-}
+            <string>audio_stop_all()
+audio_sound_gain(bgm_main,1,0);
+audio_play_sound(bgm_main,1,true);
+
 
 instance_create(0,0,obj_whiteoverlay);
 
@@ -144,31 +145,31 @@ if obj_varhold.p_pos=obj_varhold.r_pos {
     inst=instance_create(0,0,obj_fadeout);
     inst.alarm[0]=30;
     inst.roomto=roo_rivalconv;
-} else if obj_varhold.p_pos=(1||2||6||7||11||12||16||17||21||22) {
-    inst=instance_create(0,0,obj_fadeout);
-    inst.alarm[0]=30;
-    inst.roomto=roo_noconv;
-} else if obj_varhold.p_pos=(3||4||5) {
+} else if obj_varhold.p_pos&gt;=3 &amp;&amp; obj_varhold.p_pos&lt;=5 {
     inst=instance_create(0,0,obj_fadeout);
     inst.alarm[0]=30;
     inst.roomto=roo_oldconv;
-} else if obj_varhold.p_pos=(8||9||10) {
+} else if obj_varhold.p_pos&gt;=8 &amp;&amp; obj_varhold.p_pos&lt;=10 {
     inst=instance_create(0,0,obj_fadeout);
     inst.alarm[0]=30;
     inst.roomto=roo_businessconv;
-} else if obj_varhold.p_pos=(13||14||15) {
+} else if obj_varhold.p_pos&gt;=13 &amp;&amp; obj_varhold.p_pos&lt;=15  {
     inst=instance_create(0,0,obj_fadeout);
     inst.alarm[0]=30;
     inst.roomto=roo_ownerconv;
-} else if obj_varhold.p_pos=(18||19||20) {
+} else if obj_varhold.p_pos&gt;=18 &amp;&amp; obj_varhold.p_pos&lt;=20  {
     inst=instance_create(0,0,obj_fadeout);
     inst.alarm[0]=30;
     inst.roomto=roo_buffconv;
-} else if obj_varhold.p_pos=(23||24||25) {
+} else if obj_varhold.p_pos&gt;=23 &amp;&amp; obj_varhold.p_pos&lt;=25  {
     inst=instance_create(0,0,obj_fadeout);
     inst.alarm[0]=30;
     inst.roomto=roo_frogconv;
-}
+} else {
+    inst=instance_create(0,0,obj_fadeout);
+    inst.alarm[0]=30;
+    inst.roomto=roo_noconv;
+} 
 </string>
           </argument>
         </arguments>
@@ -304,6 +305,7 @@ if boggleappear&gt;8 &amp;&amp; boggled=false {
         dice2.visible=false;
         dice2.image_index=diceroll2-1;
         dice2.image_angle=irandom_range(0,359);
+        audio_play_sound(snd_diceroll,1,false);
         alarm[0]=240;
     }
     if not mouse_check_button(mb_left) and not keyboard_check(vk_space) {

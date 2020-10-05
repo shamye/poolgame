@@ -54,8 +54,10 @@ partnery=180-64;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>inst=instance_create(partnerx,partnery,obj_ebb);
-alarm[1]=40;
+            <string>if !instance_exists(obj_noconv){
+    inst=instance_create(partnerx,partnery,obj_ebb);
+    alarm[1]=40;
+}
 </string>
           </argument>
         </arguments>

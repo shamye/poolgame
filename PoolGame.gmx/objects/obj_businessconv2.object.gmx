@@ -38,6 +38,7 @@ questionalph=1;
 destroy=false;
 
 selected=1;
+success=false;
 </string>
           </argument>
         </arguments>
@@ -58,7 +59,8 @@ selected=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_sound(bgm_main);
+            <string>audio_stop_all()
+audio_sound_gain(bgm_business,1,0);
 audio_play_sound(bgm_business,1,true);
 
 player=instance_create(320-92,180-64,obj_player);
@@ -67,44 +69,54 @@ opp=instance_create(320+92,180-64,obj_business);
 ///Dialogue
 
 
-text[0]="Placeholder."
+text[0]="A llama he says! Where am I supposed to find a llama in a reasonable timeframe?"
+text[1]="I swear, that man does not put a single thought into the logistics of his ideas."
+text[2]="What are you working on?"
+text[3]="Oh, it’s YOU again."
+text[4]="I can’t tell you, it’s confidential. We don’t want the other parks plagiarizing our ideas before we can get them off the ground."
+text[5]="&gt;He repositions his monitor so you can’t see the screen. Before he did, you noticed that the screen was entirely black."
+text[6]="I have enough stress as it is, just leave me alone."
+text[7]=-1
+text[8]="Wouldn’t you like to know?"
+text[9]="Go look yourself, I have enough to do without grinding everything to a halt to entertain your endless questions."
+text[10]="Where would I look?"
+text[11]="Have you never seen a computer before? Just follow the cord to the outlet."
+text[12]="&gt;Your eyes follow the cords of the computer, vanishing into the abyss of the pool’s great depths. Why is this lazy river so deep anyways?"
+text[13]="&gt;You grip your inner tube even tighter, nauseated at the thought of sinking to the bottom."
+text[14]=-3
+text[15]="Me? Quit? How preposterous, as if I would ever leave a job without having a better opportunity lined up."
+text[16]="Quitting is... well, it’s quitters talk."
+text[17]="Wouldn’t it be better for your mental health?"
+text[18]="There are things more important than my mental health. Now get out of my sight, I don’t have time for this."
+text[19]=-3
 
-length[6]=4; //number of possible choices
+choice[7,1]="Where is your computer plugged into?"
+choice[7,2]="If you’re so stressed, why don’t you just quit?"
+choiceto[7,1]=8;
+choiceto[7,2]=15;
 
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
+length[7]=2;
 
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]="Sute"
+name[1]="Sute"
+name[2]=obj_varhold.p_name;
+name[3]="Sute"
+name[4]="Sute"
+name[5]=""
+name[6]="Sute"
+name[7]="Sute"
+name[8]="Sute"
+name[9]="Sute"
+name[10]=obj_varhold.p_name;
+name[11]="Sute"
+name[12]=""
+name[13]=""
+name[14]=""
+name[15]="Sute"
+name[16]="Sute"
+name[17]=obj_varhold.p_name;
+name[18]="Sute"
+name[19]="Sute"
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -151,6 +163,10 @@ sound[19]=snd_wind;
             <string>inst=instance_create(0,0,obj_fadeout);
 inst.alarm[0]=60;
 inst.roomto=roo_boardtest;
+audio_sound_gain(bgm_business,0,1000);
+if success=true{
+    obj_varhold.businessprog+=1;
+}
 </string>
           </argument>
         </arguments>
@@ -173,7 +189,9 @@ inst.roomto=roo_boardtest;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>if current&gt;8 &amp;&amp; current&lt;13 then {success=true}
+
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 
@@ -317,7 +335,7 @@ if text[current]=-1 {
 
     draw_set_font(fnt_baloo);
     draw_set_halign(fa_left);
-    draw_set_valign(fa_top);
+    draw_set_valign(fa_middle);
     draw_text_ext(119,246+textboxoff,string_copy(text[current-1],0,count),-1,397);
     
     draw_set_alpha(textboxalph);

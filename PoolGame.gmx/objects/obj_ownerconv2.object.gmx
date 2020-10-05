@@ -38,6 +38,7 @@ questionalph=1;
 destroy=false;
 
 selected=1;
+success=false;
 </string>
           </argument>
         </arguments>
@@ -59,6 +60,7 @@ selected=1;
           <argument>
             <kind>1</kind>
             <string>audio_stop_sound(bgm_main);
+audio_sound_gain(bgm_owner,1,0);
 audio_play_sound(bgm_owner,1,true);
 
 player=instance_create(320-92,180-64,obj_player);
@@ -67,44 +69,119 @@ opp=instance_create(320+92,180-64,obj_owner);
 ///Dialogue
 
 
-text[0]="Placeholder."
+text[0]="I made it back!"
+text[1]="Took you long enough sonny! I waited so long that I almost broke a park rule."
+text[2]="What would happen if you broke a park rule?"
+text[3]="Ahahaha! Good one sonny! Why nothing of course. I make the rules here!"
+text[4]="Alright let’s get to the point, what’s your next challenge."
+text[5]="Oh impatient now aren’t we? You really are shaping out to be more like me ahahaha!"
+text[6]="Hurry it up old man. I want to go home already."
+text[7]="The next little game we will play is I Spy."
+text[8]="I spy with myy little eyee something… mmmm orange!"
+text[9]="You’ve got to be kidding me"
+text[10]="Take your best guess sonny. Remember there are no wrong answers!"
+text[11]="There aren’t?"
+text[12]="At least for me there aren’t! Ahahahahaha!"
+text[13]=-1
 
-length[6]=4; //number of possible choices
+text[14]="Hmm, how did you know?"
+text[15]="Well if you think about it. The only things you seem to care about are money and yourself."
+text[16]="And money isn’t orange so I figured this was the second closest thing."
+text[17]="Oh you really are wiser than you look."
+text[18]="Thanks!... Hey wait!"
+text[19]="Moving on!"
+text[20]="Wait let me ask you something!"
+text[21]="Oh? What would you like to know?"
+text[22]="How do you stay dry when you are surrounded by so much water?"
+text[23]="Ahahaha! Like I said kid, I’m rich! I can do whatever I want!"
+text[24]="But the laws of physics apply to everyone!"
+text[25]="Pff says you! Sounds like peasantry talk to my rich ears."
+text[26]="Wait but how does this place even exist? This place shouldn’t be real! It’s impossible!"
+text[27]="New rule! Anyone pestering the park owner over his secrets will be penalized!"
+text[28]="Wait you can’t just-"
+text[29]="I’m rich babey! I can do whatever I want!"
+text[30]="Have a nice trip!"
+text[31]="That’s not fair!"
+text[32]="Life isn’t fair. Ahahahaha!"
+text[33]=-3
 
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
+text[34]="Good one sonny! If you’ve been paying attention you would know that I disregard everyone’s safety. Ahahahaha!"
+text[35]="Buh bye! Remember not to sue!"
+text[36]="Oh no not again!"
+text[37]=-3
 
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
+text[38]="Hmm interesting choice. Every minute I spend with you I think of myself more and more. I’ll allow it as I also enjoy making my own rules."
+text[39]="Go on, phone your friend."
+text[40]="Uh.."
+text[41]="&gt; You scramble to find someone until you find a muscular man."
+text[42]="Hey man! Do you see anything orange around here?"
+text[43]="Aw man orange? Don’t get me started man! I’m so jealous everything here is orange except for me! This park is amazing!"
+text[44]="Huh?"
+text[45]="Too bad! Wrong answer, but nice try!"
+text[46]="Wait no! Not again please!"
+text[47]="Ahahahaha! Buh bye now! Remember not to sue!"
+text[48]=-3
 
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
+choice[13,1]="The beak on your innertube?"
+choice[13,2]="The traffic cones on the water?"
+choice[13,3]="Phone a friend!"
+choiceto[13,1]=14;
+choiceto[13,2]=34;
+choiceto[13,3]=38;
+length[13]=3;
 
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]=obj_varhold.p_name;
+name[1]="Mark"
+name[2]=obj_varhold.p_name;
+name[3]="Mark"
+name[4]=obj_varhold.p_name;
+name[5]="Mark"
+name[6]=obj_varhold.p_name;
+name[7]="Mark"
+name[8]="Mark"
+name[9]=obj_varhold.p_name;
+name[10]="Mark"
+name[11]=obj_varhold.p_name;
+name[12]="Mark"
+name[13]="Mark"
+
+name[14]="Mark"
+name[15]=obj_varhold.p_name;
+name[16]=obj_varhold.p_name;
+name[17]="Mark"
+name[18]=obj_varhold.p_name;
+name[19]="Mark"
+name[20]=obj_varhold.p_name;
+name[21]="Mark"
+name[22]=obj_varhold.p_name;
+name[23]="Mark"
+name[24]=obj_varhold.p_name;
+name[25]="Mark"
+name[26]=obj_varhold.p_name;
+name[27]="Mark"
+name[28]=obj_varhold.p_name;
+name[29]="Mark"
+name[30]="Mark"
+name[31]=obj_varhold.p_name;
+name[32]="Mark"
+name[33]="Mark"
+
+name[34]="Mark"
+name[35]="Mark"
+name[36]=obj_varhold.p_name;
+name[37]=obj_varhold.p_name;
+
+name[38]="Mark"
+name[39]="Mark"
+name[40]=obj_varhold.p_name;
+name[41]=""
+name[42]=obj_varhold.p_name;
+name[43]="Tim Bo"
+name[44]=obj_varhold.p_name;
+name[45]="Mark"
+name[46]=obj_varhold.p_name;
+name[47]="Mark"
+name[48]="Mark"
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -126,6 +203,35 @@ sound[16]=snd_wind;
 sound[17]=snd_wind;
 sound[18]=snd_wind;
 sound[19]=snd_wind;
+sound[20]=snd_wind;
+sound[21]=snd_wind;
+sound[22]=snd_wind;
+sound[23]=snd_wind;
+sound[24]=snd_wind;
+sound[25]=snd_wind;
+sound[26]=snd_wind;
+sound[27]=snd_wind;
+sound[28]=snd_wind;
+sound[29]=snd_wind;
+sound[30]=snd_wind;
+sound[31]=snd_wind;
+sound[32]=snd_wind;
+sound[33]=snd_wind;
+sound[34]=snd_wind;
+sound[35]=snd_wind;
+sound[36]=snd_wind;
+sound[37]=snd_wind;
+sound[38]=snd_wind;
+sound[39]=snd_wind;
+sound[40]=snd_wind;
+sound[41]=snd_wind;
+sound[42]=snd_wind;
+sound[43]=snd_wind;
+sound[44]=snd_wind;
+sound[45]=snd_wind;
+sound[46]=snd_wind;
+sound[47]=snd_wind;
+sound[48]=snd_wind;
 </string>
           </argument>
         </arguments>
@@ -151,6 +257,10 @@ sound[19]=snd_wind;
             <string>inst=instance_create(0,0,obj_fadeout);
 inst.alarm[0]=60;
 inst.roomto=roo_boardtest;
+audio_sound_gain(bgm_owner,0,1000);
+if success=true{
+    obj_varhold.ownerprog+=1;
+}
 </string>
           </argument>
         </arguments>
@@ -173,7 +283,9 @@ inst.roomto=roo_boardtest;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>if current&gt;22 &amp;&amp; current&lt;32 then {success=true};
+
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 

@@ -97,7 +97,7 @@ sound[5]=snd_wind;
 sound[6]=snd_tuberhaha;
 sound[7]=snd_wind;
 sound[8]=snd_wind;
-sound[9]=snd_wind;
+sound[9]=snd_tuberlikeandsub
 sound[10]=snd_wind;
 </string>
           </argument>
@@ -121,7 +121,7 @@ sound[10]=snd_wind;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(snd_tuberlikeandsub,1,false);
+            <string>audio_sound_gain(bgm_rival,0,500);
 inst=instance_create(0,0,obj_fadeout);
 inst.alarm[0]=1;
 inst.roomto=roo_boardtest;
@@ -147,7 +147,12 @@ inst.roomto=roo_boardtest;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>if current&gt;=7 &amp;&amp; audio_is_playing(bgm_main) {
+    audio_stop_sound(bgm_main);
+    audio_play_sound(bgm_rival,1,true);
+}
+
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 
