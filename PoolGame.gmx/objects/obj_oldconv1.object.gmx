@@ -58,29 +58,16 @@ selected=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Dialogue
+            <string>audio_stop_sound(bgm_main);
+audio_play_sound(bgm_old,1,true);
+
+player=instance_create(320-92,180-64,obj_player);
+opp=instance_create(320+92,180-64,obj_old);
+
+///Dialogue
 
 
-text[0]="Hey what's up."
-text[1]="Stuck in the pool? Yeah, it's tough huh."
-text[2]="Welp. Good luck out there."
-text[3]="..."
-text[4]="Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues."
-text[5]="Look, I can't help you."
-text[6]=-1 //this text prompt is a choice
-text[7]="Yes very sure."
-text[8]=-2 //jump to a different part
-text[9]="I'm Shammy."
-text[10]="..."
-text[11]="yeah"
-text[12]=-2
-text[13]="........ NO..."
-text[14]="I can swim."
-text[15]="I just... am having... fun.........."
-text[16]="..."
-text[17]=-2
-text[18]="ok cya."
-text[19]=-3 //close dialogue
+text[0]="Placeholder."
 
 length[6]=4; //number of possible choices
 
@@ -139,6 +126,31 @@ sound[16]=snd_wind;
 sound[17]=snd_wind;
 sound[18]=snd_wind;
 sound[19]=snd_wind;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>inst=instance_create(0,0,obj_fadeout);
+inst.alarm[0]=60;
+inst.roomto=roo_boardtest;
 </string>
           </argument>
         </arguments>

@@ -38,6 +38,9 @@ questionalph=1;
 destroy=false;
 
 selected=1;
+
+player=instance_create(320-92,180-64,obj_player);
+opp=instance_create(320+92,180-64,obj_rival);
 </string>
           </argument>
         </arguments>
@@ -61,63 +64,29 @@ selected=1;
             <string>///Dialogue
 
 
-text[0]="Hey what's up."
-text[1]="Stuck in the pool? Yeah, it's tough huh."
-text[2]="Welp. Good luck out there."
-text[3]="..."
-text[4]="Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues. Please don't act so nonchalant about my issues."
-text[5]="Look, I can't help you."
-text[6]=-1 //this text prompt is a choice
-text[7]="Yes very sure."
-text[8]=-2 //jump to a different part
-text[9]="I'm Shammy."
-text[10]="..."
-text[11]="yeah"
-text[12]=-2
-text[13]="........ NO..."
-text[14]="I can swim."
-text[15]="I just... am having... fun.........."
-text[16]="..."
-text[17]=-2
-text[18]="ok cya."
-text[19]=-3 //close dialogue
+text[0]="..."
+text[1]="Hm."
+text[2]="This lazy river..."
+text[3]="Is not relaxing at all!!!"
+text[4]="I can't reach the bottom with my feet... Oh god, how deep does it go!?"
+text[5]="This water park is a safety hazard!"
+text[6]="I thought the 'Days since accident: 0' sign at the front entrace was a tounge-in-cheek joke..."
+text[7]="Nope, it's real."
+text[8]="And that makes it the PERFECT place for a little recording."
+text[9]="I'll see you around the loop"
+text[10]="If you survive, that is!!"
 
-length[6]=4; //number of possible choices
-
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
-
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]=obj_varhold.p_name;
+name[1]=obj_varhold.p_name;
+name[2]=obj_varhold.p_name;
+name[3]=obj_varhold.p_name;
+name[4]=obj_varhold.p_name;
+name[5]=obj_varhold.p_name;
+name[6]=obj_varhold.p_name;
+name[7]="Cocky Dude"
+name[8]="Cocky Dude"
+name[9]="Cocky Dude"
+name[10]="Cocky Dude"
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -125,20 +94,37 @@ sound[2]=snd_wind;
 sound[3]=snd_wind;
 sound[4]=snd_wind;
 sound[5]=snd_wind;
-sound[6]=snd_wind;
+sound[6]=snd_tuberhaha;
 sound[7]=snd_wind;
 sound[8]=snd_wind;
 sound[9]=snd_wind;
 sound[10]=snd_wind;
-sound[11]=snd_wind;
-sound[12]=snd_wind;
-sound[13]=snd_wind;
-sound[14]=snd_wind;
-sound[15]=snd_wind;
-sound[16]=snd_wind;
-sound[17]=snd_wind;
-sound[18]=snd_wind;
-sound[19]=snd_wind;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_play_sound(snd_tuberlikeandsub,1,false);
+inst=instance_create(0,0,obj_fadeout);
+inst.alarm[0]=1;
+inst.roomto=roo_boardtest;
 </string>
           </argument>
         </arguments>
@@ -411,10 +397,11 @@ draw_set_color(c_white);
           <argument>
             <kind>1</kind>
             <string>if destroy=false{
-    audio_play_sound(sound[current],1,false);
     if count &lt; string_length(text[current]) {
         count=string_length(text[current])
+        audio_play_sound(snd_wind,1,false);
     } else {
+    audio_play_sound(sound[current],1,false);
         if current+1 = array_length_1d(text) || text[current]=-3 {
             destroy=true;
         } else {

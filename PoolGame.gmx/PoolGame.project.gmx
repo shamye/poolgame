@@ -4,10 +4,19 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_wind</sound>
+    <sound>sound\snd_up</sound>
+    <sound>sound\snd_down</sound>
+    <sound>sound\bgm_intro</sound>
+    <sound>sound\bgm_main</sound>
+    <sound>sound\snd_type</sound>
+    <sound>sound\snd_tuberhaha</sound>
+    <sound>sound\snd_tuberlikeandsub</sound>
+  </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_protagonist</sprite>
-    <sprite>sprites\spr_rival</sprite>
+    <sprite>sprites\spr_playerpiece</sprite>
+    <sprite>sprites\spr_rivalpiece</sprite>
     <sprite>sprites\spr_board</sprite>
     <sprite>sprites\spr_boardoutline1</sprite>
     <sprite>sprites\spr_boardoutline2</sprite>
@@ -17,6 +26,13 @@
     <sprite>sprites\spr_boggleunder</sprite>
     <sprite>sprites\spr_star</sprite>
     <sprite>sprites\spr_dice</sprite>
+    <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_logo</sprite>
+    <sprite>sprites\spr_waterpark</sprite>
+    <sprite>sprites\spr_ebb</sprite>
+    <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_shugor</sprite>
+    <sprite>sprites\spr_rival</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_water</background>
@@ -31,16 +47,73 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_board</object>
-    <object>objects\obj_protagonist</object>
-    <object>objects\obj_rival</object>
+    <object>objects\obj_playerpiece</object>
+    <object>objects\obj_rivalpiece</object>
     <object>objects\obj_dialoguetest</object>
+    <object>objects\obj_businessconv1</object>
+    <object>objects\obj_businessconv2</object>
+    <object>objects\obj_businessconv3</object>
+    <object>objects\obj_businessend</object>
+    <object>objects\obj_oldconv1</object>
+    <object>objects\obj_oldconv2</object>
+    <object>objects\obj_oldconv3</object>
+    <object>objects\obj_oldend</object>
+    <object>objects\obj_ownerconv1</object>
+    <object>objects\obj_ownerconv2</object>
+    <object>objects\obj_ownerconv3</object>
+    <object>objects\obj_ownerend</object>
+    <object>objects\obj_buffconv1</object>
+    <object>objects\obj_buffconv2</object>
+    <object>objects\obj_buffconv3</object>
+    <object>objects\obj_buffend</object>
+    <object>objects\obj_frogconv1</object>
+    <object>objects\obj_frogconv2</object>
+    <object>objects\obj_frogconv3</object>
+    <object>objects\obj_frogend</object>
+    <object>objects\obj_rivalconv1</object>
+    <object>objects\obj_rivalconv2</object>
+    <object>objects\obj_rivalconv3</object>
+    <object>objects\obj_rivalend</object>
+    <object>objects\obj_introdialogue</object>
+    <object>objects\obj_intro2dialogue</object>
     <object>objects\obj_boardanim</object>
     <object>objects\obj_dice</object>
     <object>objects\obj_whiteoverlay</object>
+    <object>objects\obj_wall</object>
+    <object>objects\obj_logo</object>
+    <object>objects\obj_stars</object>
+    <object>objects\obj_ebb</object>
+    <object>objects\obj_ebber</object>
+    <object>objects\obj_fadeout</object>
+    <object>objects\obj_fadein</object>
+    <object>objects\obj_nameinput</object>
+    <object>objects\obj_appearanceselect</object>
+    <object>objects\obj_varhold</object>
+    <object>objects\obj_waterparkprev</object>
+    <object>objects\obj_shugor</object>
+    <object>objects\obj_player</object>
+    <object>objects\obj_rival</object>
+    <object>objects\obj_business</object>
+    <object>objects\obj_old</object>
+    <object>objects\obj_owner</object>
+    <object>objects\obj_buff</object>
+    <object>objects\obj_frog</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\roo_dialoguetest</room>
+    <room>rooms\roo_logo</room>
+    <room>rooms\roo_menu</room>
+    <room>rooms\roo_name</room>
+    <room>rooms\roo_gender</room>
+    <room>rooms\roo_intro</room>
+    <room>rooms\roo_intro2</room>
+    <room>rooms\roo_noconv</room>
+    <room>rooms\roo_oldconv</room>
+    <room>rooms\roo_businessconv</room>
+    <room>rooms\roo_ownerconv</room>
+    <room>rooms\roo_frogconv</room>
+    <room>rooms\roo_rivalconv</room>
     <room>rooms\roo_boardtest</room>
+    <room>rooms\roo_dialoguetest</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

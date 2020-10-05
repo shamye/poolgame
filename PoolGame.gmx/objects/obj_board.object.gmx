@@ -3,7 +3,7 @@
   <spriteName>spr_board</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-200</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -75,8 +75,7 @@ canfade=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth=y*-1
-floatsin+=irandom_range(5,15)/10;
+            <string>floatsin+=irandom_range(5,15)/10;
 
 if canfade=true {
     image_alpha=lerp(image_alpha,1,0.2);

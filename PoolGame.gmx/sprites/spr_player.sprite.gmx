@@ -7,10 +7,10 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>22</bbox_left>
+  <bbox_left>34</bbox_left>
   <bbox_right>229</bbox_right>
-  <bbox_top>27</bbox_top>
-  <bbox_bottom>176</bbox_bottom>
+  <bbox_top>39</bbox_top>
+  <bbox_bottom>178</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -20,6 +20,7 @@
   <width>256</width>
   <height>256</height>
   <frames>
-    <frame index="0">images\spr_rival_0.png</frame>
+    <frame index="0">images\spr_player_0.png</frame>
+    <frame index="1">images\spr_player_1.png</frame>
   </frames>
 </sprite>
