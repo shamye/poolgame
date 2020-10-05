@@ -129,7 +129,7 @@ choice[3,2]="You mean you love me too?"
 choice[3,3]="You’ll help me get revenge on my obnoxious friend?"
 choiceto[3,1]=4
 choiceto[3,2]=13
-choiceto[3,3]=40
+choiceto[3,3]=49
 length[3]=3;
 
 choice[6,1]="Wait so you lied about agreeing with me?"
