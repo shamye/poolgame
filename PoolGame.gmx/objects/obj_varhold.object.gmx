@@ -36,6 +36,9 @@ businessprog=0;
 ownerprog=0;
 buffprog=0;
 frogprog=0;
+
+bgm_idx = -1;
+bgm_pos = -1;
 </string>
           </argument>
         </arguments>

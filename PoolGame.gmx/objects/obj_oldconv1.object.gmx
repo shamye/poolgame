@@ -68,45 +68,102 @@ opp=instance_create(320+92,180-64,obj_old);
 
 ///Dialogue
 
+text[0]="Oh look there dear, that person looks a little silly don’t they?"
+text[1]="Oh my you’re right Tina. I wonder why they are grabbing their innertube like that."
+text[2]="You there! Are you alright there? You almost seem like my grandchildren the way you grab that innertube."
+text[3]=-1
+text[4]="Oh I like you! You’ve got charm kid!"
+text[5]="Now that I think about it they look like Billy. Don’t they dear?"
+text[6]="No no sweetie you are seeing things, I’m definitely sensing a lot of Emma energy from this one."
+text[7]="You know dear I think it’s the opposite. I think I’m not seeing things."
+text[8]="You are going blind? Well I wouldn’t be surprised."
+text[9]="No that’s not it. I just mean they are mostly covered by an innertube so we really wouldn’t be able to tell what they look like."
+text[10]= "Oh you’ve got a point there honey. I guess we were always known for jumping to conclusions hahaha."
+text[11]="If only we could jump as high as our conclusions!"
+text[12]="Good one dear!"
+text[13]="Um.. could you teach me how to swim?"
+text[14]= "Swim? Don’t think we can do that right dear?"
+text[15]="These old bones don’t work the way they used to. I can barely float."
+text[16]="Well how would you get out of the water then?"
+text[17]="Oh you don’t know? There was a doohickey around here somewhere."
+text[18]="I think you mean the propeller dear."
+text[19]="That’s the one!"
+text[20]="Do you think you could lend it to me? I want to get out of the water, but I can’t swim."
+text[21]="Hmm well perhaps if you do us a favor."
+text[22]="Oh I know what you are thinking honey, you’ve always been the brains of the family."
+text[23]="Thank you dear."
+text[24]="What’s the favor?"
+text[25]="If you spend some time with us and pretend to be our grandchild we’ll help you out."
+text[26]="I knew it! I knew it! This woman is a genius! What did I tell ya!"
+text[27]="Don’t you already have grandchildren? Why aren’t they here with you?"
+text[28]="Oh those crazy kids, they went on the rides, but those are too fast for us."
+text[29]="They said the lazy river wasn’t exciting enough for them."
+text[30]="I guess it couldn’t hurt to spend some time with you. You’ll be like the grandparents I never had."
+text[31]="Aww, you hear that dear?"
+text[32]="I can tell you’ll do a good job already."
+text[33]="Oh no the current is taking me away!"
+text[34]="Don’t worry, if we need you we’ll give you a shout!"
+text[35]=-3
+text[36]="Oh my, well that is tragic to hear."
+text[37]="You aren’t much of a talker now are you? I can tell."
+text[38]="It’s always the silent ones that never know when they are being inappropriate."
+text[39]="What’s wrong? I’m just being honest. You want me to lie?"
+text[40]="I think we better be on our way dear. I can hear bingo calling my name."
+text[41]="Oh that’s right dear, I believe there is leftover oatmeal in the car."
+text[42]="Was it something I said?"
+text[43]="&gt; You shrug."
 
-text[0]="Placeholder."
+choice[3,1]="Who’s to say I’m not your grandchild?"
+choice[3,2]="My grandparents are dead so can’t relate."
+choiceto[3,1]=4
+choiceto[3,2]=36
 
-length[6]=4; //number of possible choices
+length[3]=2;
 
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
-
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]="Tina"
+name[1]="Damon"
+name[2]="Damon"
+name[3]=""
+name[4]="Damon"
+name[5]="Tina"
+name[6]="Damon"
+name[7]="Tina"
+name[8]="Damon"
+name[9]="Tina"
+name[10]="Damon"
+name[11]="Tina"
+name[12]="Damon"
+name[13]=obj_varhold.p_name;
+name[14]="Damon"
+name[15]="Tina"
+name[16]=obj_varhold.p_name;
+name[17]="Tina"
+name[18]="Damon"
+name[19]="Tina"
+name[20]=obj_varhold.p_name;
+name[21]="Tina"
+name[22]="Damon"
+name[23]="Tina"
+name[24]=obj_varhold.p_name;
+name[25]="Tina"
+name[26]="Damon"
+name[27]=obj_varhold.p_name;
+name[28]="Damon"
+name[29]="Tina"
+name[30]=obj_varhold.p_name;
+name[31]="Tina"
+name[32]="Damon"
+name[33]=obj_varhold.p_name;
+name[34]="Damon"
+name[35]=""
+name[36]="Tina"
+name[37]="Damon"
+name[38]="Damon"
+name[39]=obj_varhold.p_name;
+name[40]="Tina"
+name[41]="Damon"
+name[42]=obj_varhold.p_name;
+name[43]=""
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -128,6 +185,30 @@ sound[16]=snd_wind;
 sound[17]=snd_wind;
 sound[18]=snd_wind;
 sound[19]=snd_wind;
+sound[20]=snd_wind;
+sound[21]=snd_wind;
+sound[22]=snd_wind;
+sound[23]=snd_wind;
+sound[24]=snd_wind;
+sound[25]=snd_wind;
+sound[26]=snd_wind;
+sound[27]=snd_wind;
+sound[28]=snd_wind;
+sound[29]=snd_wind;
+sound[30]=snd_wind;
+sound[31]=snd_wind;
+sound[32]=snd_wind;
+sound[33]=snd_wind;
+sound[34]=snd_wind;
+sound[35]=snd_wind;
+sound[36]=snd_wind;
+sound[37]=snd_wind;
+sound[38]=snd_wind;
+sound[39]=snd_wind;
+sound[40]=snd_wind;
+sound[41]=snd_wind;
+sound[42]=snd_wind;
+sound[43]=snd_wind;
 </string>
           </argument>
         </arguments>
@@ -179,7 +260,9 @@ if success=true {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>if current&gt;3 &amp;&amp; current&lt;35 then {success=true}
+
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 

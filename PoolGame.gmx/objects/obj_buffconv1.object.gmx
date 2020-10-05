@@ -68,7 +68,7 @@ opp=instance_create(320+92,180-64,obj_buff);
 
 ///Dialogue
 
-text[0]="Heyy, dude! You mind telling me the secret is around here?"
+text[0]="Heyy, dude! You mind telling me what the secret is around here?"
 text[1]="“Do you mean the giant frogs, loop da loop, or the fact that this waterpark is still in business despite the many health code violations?"
 text[2]="...What? No man, I mean these sick tans! How’d you guys manage to capture such a perfect orange? It’s making me a little jealous!"
 text[3]=-1

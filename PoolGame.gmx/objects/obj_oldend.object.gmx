@@ -58,47 +58,23 @@ selected=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Dialogue
+            <string>text[0]="Alright! It’s settled then! Welcome aboard kiddo."
+text[1]="Just grab onto each of our hands and we’ll propel you back to shore."
+text[2]="Just promise me one thing."
+text[3]="What is it?"
+text[4]="Promise me that we will not make juice together."
+text[5]="Achieved Damon and Tina's Ending"
+text[6]="Press Spacebar to restart the game."
+text[7]=-3
 
-
-text[0]="Placeholder."
-
-length[6]=4; //number of possible choices
-
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
-
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]="Damon"
+name[1]="Tina"
+name[2]=obj_varhold.p_name;
+name[3]="Damon"
+name[4]=obj_varhold.p_name;
+name[5]=""
+name[6]=""
+name[7]=""
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -108,18 +84,6 @@ sound[4]=snd_wind;
 sound[5]=snd_wind;
 sound[6]=snd_wind;
 sound[7]=snd_wind;
-sound[8]=snd_wind;
-sound[9]=snd_wind;
-sound[10]=snd_wind;
-sound[11]=snd_wind;
-sound[12]=snd_wind;
-sound[13]=snd_wind;
-sound[14]=snd_wind;
-sound[15]=snd_wind;
-sound[16]=snd_wind;
-sound[17]=snd_wind;
-sound[18]=snd_wind;
-sound[19]=snd_wind;
 </string>
           </argument>
         </arguments>

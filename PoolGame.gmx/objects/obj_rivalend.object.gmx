@@ -58,47 +58,37 @@ selected=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Dialogue
+            <string>text[0]="&gt;WHAM!"
+text[1]="That pose... the backdrop of clouds... yes, this is it: the perfect thumbnail."
+text[2]="&gt;CLICK! FLASH!"
+text[3]="&gt;SLAM!"
+text[4]="&gt;You wake up, feeling a great pain in your lower back."
+text[5]="&gt;The ground around you is rough and carves into your skin, but it is ground nonetheless."
+text[6]="&gt;With your legs buckling from all the time you spent suspended in the river, you slowly rise up."
+text[7]="&gt;Realizing that you still have the tube on, you try to push it off."
+text[8]="&gt;It squeaks and wiggles, but it won’t move at all."
+text[9]="&gt;It hurts when you do it, too, like it’s been glued to your skin."
+text[10]="&gt;Shrugging, you walk away, thinking 'I'll find some way to get this off eventually.'"
+text[11]="&gt;Behind you, there is an orchestra of clicks and flashes, echoing with each step."
+text[12]="Achieved tUber180's Ending"
+text[13]="Press Spacebar to restart the game."
+text[14]=-3
 
-
-text[0]="Placeholder."
-
-length[6]=4; //number of possible choices
-
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
-
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]=""
+name[1]="tUber180"
+name[2]=""
+name[3]=""
+name[4]=""
+name[5]=""
+name[6]=""
+name[7]=""
+name[8]=""
+name[9]=""
+name[10]=""
+name[11]=""
+name[12]=""
+name[13]=""
+name[14]=""
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -115,11 +105,6 @@ sound[11]=snd_wind;
 sound[12]=snd_wind;
 sound[13]=snd_wind;
 sound[14]=snd_wind;
-sound[15]=snd_wind;
-sound[16]=snd_wind;
-sound[17]=snd_wind;
-sound[18]=snd_wind;
-sound[19]=snd_wind;
 </string>
           </argument>
         </arguments>

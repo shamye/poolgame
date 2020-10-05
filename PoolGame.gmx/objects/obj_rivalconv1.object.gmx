@@ -68,46 +68,71 @@ opp=instance_create(320+92,180-64,obj_rival);
 
 ///Dialogue
 
+text[0]="&gt; *FLASH*"
+text[1]="&gt; You scramble to keep ahold of your tube as you feel something bump into you."
+text[2]="AHH"
+text[3]="Uh oh! NERD ALERT!!!"
+text[4]="LOOKS LIKE THIS MORON JUST GOT AN ILLEGAL PHOTOGRAPH TAKEN OF THEM!"
+text[5]="PLEASE WRITE THIS WAIVER SO I DON’T GET SUED"
+text[6]="...where are your parents."
+text[7]="Oh? Do you not know who I am?"
+text[8]="You’ve just been hit by the LEGENDARY tUber180!"
+text[9]="&gt; Your eyes have finally readjusted to the light. But something about this literal child is familiar."
+text[10]=-1
+text[11]="Hey don’t say my name I’m filming!"
+text[12]="You think it’s cool to ruin people’s footage? If this was live people’d mail me like.. Bombs and stuff."
+text[13]="Now i have to get my mom to edit th- I mean, I have to edit this!"
+text[14]="... Wait, why do you know my real name anyway, you like some old creep?... Oh my god are you my stalker!?"
+text[15]="STRANGER DANGER!!!"
+text[16]="&gt; He kicks you away and speeds off, you struggle to get a grip on your tube, and also this situation."
+text[17]=-3
+text[18]="Yeah Dude! I’m the most famous youtuber in this whole town"
+text[19]="I’ve got subscribers in the TRIPLE digits"
+text[20]="You should subscribe too, I do like pranks, and games, and unboxing videos"
+text[21]="Just yesterday i did an unboxing of this sweet YOLOSWAG (tm) brand tube, my parents were so mad cause it cost like all of my money,don’t care though it’s EPIC."
+text[22]="You regret humouring him, as he spins in his tube ranting into his camera, but it’s not like you can swim away"
+text[23]="Uh, what kind of pranks do you do? Just like what you did to me a minute ago?"
+text[24]="“THAT?! Nah nerd that wasn’t a prank, THIS is a prank! Haha, remember to click the bell guys!"
+text[25]="whu-"
+text[26]="&gt;He hits you with a flash again, and kicks the tube to send you spinning. As you see stars, you hear the sound of laughter and rapid splashing"
+text[27]=-3
 
-text[0]="Placeholder."
+choice[10,1] = "Wait a second, tUber180… That kid in the news for trespassing… Mike Ansubscribe, was it????"
+choice[10,2] = "tUber 180 huh, you must be a big deal."
+choiceto[10,1]=11;
+choiceto[10,2]=18;
 
-length[6]=4; //number of possible choices
+length[10]=2;
 
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
-
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
-
+name[0]=""
+name[1]=""
+name[2]=obj_varhold.p_name;
+name[3]="tUber180"
+name[4]="tUber180"
+name[5]="tUber180"
+name[6]=obj_varhold.p_name;
+name[7]="tUber180"
+name[8]="tUber180"
+name[9]=""
+name[10]=""
+name[11]="tUber180"
+name[12]="tUber180"
+name[13]="tUber180"
+name[14]="tUber180"
+name[15]="tUber180"
+name[16]="tUber180"
+name[17]=""
+name[18]="tUber180"
+name[19]="tUber180"
+name[20]="tUber180"
+name[21]="tUber180"
+name[22]=""
+name[23]=obj_varhold.p_name;
+name[24]="tUber180"
+name[25]=obj_varhold.p_name;
+name[26]="tUber180"
+name[27]=""
+ 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
 sound[2]=snd_wind;
@@ -128,6 +153,14 @@ sound[16]=snd_wind;
 sound[17]=snd_wind;
 sound[18]=snd_wind;
 sound[19]=snd_wind;
+sound[20]=snd_wind;
+sound[21]=snd_wind;
+sound[22]=snd_wind;
+sound[23]=snd_wind;
+sound[24]=snd_wind;
+sound[25]=snd_wind;
+sound[26]=snd_wind;
+sound[27]=snd_wind;
 </string>
           </argument>
         </arguments>
@@ -179,7 +212,9 @@ obj_varhold.rivalprog+=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>success=true
+
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 

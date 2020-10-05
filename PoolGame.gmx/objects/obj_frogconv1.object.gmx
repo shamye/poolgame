@@ -25,40 +25,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float =0;
-
-current=0;
-count=0;
-
-shadowoffset=0;
-textboxoff=150;
-textboxalph=0;
-questionalph=1;
-
-destroy=false;
-
-selected=1;
-success=false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>audio_stop_all()
 audio_sound_gain(bgm_frog,1,0);
 audio_play_sound(bgm_frog,1,true);
@@ -66,47 +32,177 @@ audio_play_sound(bgm_frog,1,true);
 player=instance_create(320-92,180-64,obj_player);
 opp=instance_create(320+92,180-64,obj_frog);
 
-///Dialogue
+text[0]="Human!"
+text[1]="Okay I must be hallucinating, there’s no way there’s a giant frog speaking to me right now."
+text[2]="Human do not be alarmed, I mean no harm." 
+text[3]="This is really trippy, maybe I shouldn’t have eaten the food here."
+text[4]="Hello friendly frog hallucination, how are you today?"
+text[5]="I require your assistance, human."
+text[6]="What’s wrong?"
+text[7]="Ever since my cousin moved away I haven’t been able to socialize with anyone."
+text[8]="Everyone seems to run away from me in fear."
+text[9]="As you can see I am rather lonesome. Could you perhaps conversate with me?"
+text[10]="Feel free to ask me whatever you please."
+text[11]="I would imagine you do not come across many giant frogs in your lifetime."
+text[12]=-1
+text[13]="We are all gifted in various talents."
+text[14]="If you look around you will see that birds specialize in flying while fish specialize in swimming."
+text[15]="I too have my own talents."
+text[16]="Why do I speak when smaller frogs are incapable of doing so?"
+text[17]="Well you could say I am not like other frogs."
+text[18]="Even my own cousin was unlike me."
+text[19]="I can see that you too are unlike the other humans I’ve seen here."
+text[20]="No! I’m completely normal I swear!"
+text[21]="You need not lie to me human, there is nothing wrong with being different from others."
+text[22]="I know that more than anyone else here."
+text[23]="If you refuse to accept yourself as you are, know that I accept you human."
+text[24]="Why are you being so kind to me?"
+text[25]="No wait! I’m not strange at all! Everyone else here is!"
+text[26]="I see, I am not the one you are lying to, it is to yourself."
+text[27]="I do not blame you human, it is difficult to trust others or even yourself."
+text[28]="I treat you with the same kindness that I wish to be given in return."
+text[29]="Well you’re very smart and kind for a frog even though you misunderstand me."
+text[30]=-1
+text[31]="My cousin was a gentle frog and appears similar to my own reflection."
+text[32]="He is incapable of human speech. His true talent lies in his handwriting."
+text[33]="Even though he was never taught how to speak, we still enjoyed each other’s company."
+text[34]="Where did he go?"
+text[35]="He’s in a better place now."
+text[36]="I’m so sorry."
+text[37]="There is no need to be sorry. He left to explore the world. He is looking for a place where he belongs."
+text[38]="I still await a letter from him. Once it arrives I will treasure it always."
+text[39]="I’m glad to hear. I hope your cousin writes back to you soon."
+text[40]=-1
+text[41]="Ah yes philosophy, I am very familiar with the concept."
+text[42]="No, I mean where were you born?"
+text[43]="I feel as though in a past life I was a slime, then a monkey."
+text[44]="What??"
+text[45]="My earliest memories are that of an egg becoming a drift in a whirling current, abandoned by my guardian."
+text[46]="An egg that was mass produced by an ominous force with unknown motives."
+text[47]="Even now they watch over us, manipulating our very decisions."
+text[48]=-1
+text[49]="No, they are the ones that made you say that."
+text[50]=-1
+text[51]= "&gt; You remain quiet and look the frog in the eyes like a good protagonist."
+text[52]="I see they’ve gotten to you already. Regardless, I hope you make the right decisions."
+text[53]=-1
+text[54]="I don’t understand what you are talking about! You are hurting my head!"
+text[55]=-1
+text[56]="You aren’t even making any sense!"
+text[57]="My apologies human, in truth it was merely a jest. I’ve been told that I have a rather strange sense of humor."
+text[58]="Y-yeah of course! Just a joke. Right! I was also joking around!"
+text[59]="I was just trying to fool you back."
+text[60]="It was fun though, thanks for chatting with me."
+text[61]="&gt; You say insincerely"
+text[62]=-1
+text[63]="Thank you kindly, it was a pleasure to conversate with you human."
+text[64]="Feel free to visit anytime."
+text[65]="Will do!"
+text[66]="I feel like I’m forgetting something. What was I going to ask him again?"
+text[67]=-3
 
+choice[12,1]="How can you speak?"
+choice[12,2]="Tell me about your cousin."
+choice[12,3]="Where did you come from?"
+choiceto[12,1]=13
+choiceto[12,2]=31
+choiceto[12,3]=41
+length[12]=3;
 
-text[0]="Placeholder."
+choice[30,1]="I should get going."
+choiceto[30,1]=63
+length[30]=1;
 
-length[6]=4; //number of possible choices
+choice[40,1]="I should get going."
+choiceto[40,1]=63
+length[40]=1;
 
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
+choice[50,1]="I should get going."
+choiceto[50,1]=63
+length[50]=1;
 
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
+choice[55,1]="I should get going."
+choiceto[55,1]=63
+length[55]=1;
 
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
+choice[48,1]="You mean me?"
+choice[48,2]="Don’t click the top one!"
+choiceto[48,1]=49
+choiceto[48,2]=51
+length[48]=1;
 
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+choice[53,1]="Now play dumb!"
+choiceto[53,1]=54
+length[53]=1;
+
+name[0]="Moshi"
+name[1]=obj_varhold.p_name;
+name[2]="Moshi"
+name[3]=obj_varhold.p_name;
+name[4]=obj_varhold.p_name;
+name[5]="Moshi"
+name[6]=obj_varhold.p_name;
+name[7]="Moshi"
+name[8]="Moshi"
+name[9]="Moshi"
+name[10]="Moshi"
+name[11]="Moshi"
+name[12]=""
+name[13]="Moshi"
+name[14]="Moshi"
+name[15]="Moshi"
+name[16]="Moshi"
+name[17]="Moshi"
+name[18]="Moshi"
+name[19]="Moshi"
+name[20]=obj_varhold.p_name;
+name[21]="Moshi"
+name[22]="Moshi"
+name[23]="Moshi"
+name[24]=obj_varhold.p_name;
+name[25]=obj_varhold.p_name;
+name[26]="Moshi"
+name[27]="Moshi"
+name[28]="Moshi"
+name[29]=obj_varhold.p_name;
+name[30]=""
+name[31]="Moshi"
+name[32]="Moshi"
+name[33]="Moshi"
+name[34]=obj_varhold.p_name;
+name[35]="Moshi"
+name[36]=obj_varhold.p_name;
+name[37]="Moshi"
+name[38]="Moshi"
+name[39]=obj_varhold.p_name;
+name[40]=""
+name[41]="Moshi"
+name[42]=obj_varhold.p_name;
+name[43]="Moshi"
+name[44]=obj_varhold.p_name;
+name[45]="Moshi"
+name[46]="Moshi"
+name[47]="Moshi"
+name[48]=""
+name[49]="Moshi"
+name[50]=""
+name[51]=""
+name[52]="Moshi"
+name[53]=""
+name[54]=obj_varhold.p_name;
+name[55]=""
+name[56]=obj_varhold.p_name;
+name[57]="Moshi"
+name[58]=obj_varhold.p_name;
+name[59]="Moshi"
+name[60]=obj_varhold.p_name;
+name[61]=""
+name[62]=""
+name[63]="Moshi"
+name[64]="Moshi"
+name[65]=obj_varhold.p_name;
+name[66]=obj_varhold.p_name;
+name[67]=""
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -128,6 +224,88 @@ sound[16]=snd_wind;
 sound[17]=snd_wind;
 sound[18]=snd_wind;
 sound[19]=snd_wind;
+sound[20]=snd_wind;
+sound[21]=snd_wind;
+sound[22]=snd_wind;
+sound[23]=snd_wind;
+sound[24]=snd_wind;
+sound[25]=snd_wind;
+sound[26]=snd_wind;
+sound[27]=snd_wind;
+sound[28]=snd_wind;
+sound[29]=snd_wind;
+sound[30]=snd_wind;
+sound[31]=snd_wind;
+sound[32]=snd_wind;
+sound[33]=snd_wind;
+sound[34]=snd_wind;
+sound[35]=snd_wind;
+sound[36]=snd_wind;
+sound[37]=snd_wind;
+sound[38]=snd_wind;
+sound[39]=snd_wind;
+sound[40]=snd_wind;
+sound[41]=snd_wind;
+sound[42]=snd_wind;
+sound[43]=snd_wind;
+sound[44]=snd_wind;
+sound[45]=snd_wind;
+sound[46]=snd_wind;
+sound[47]=snd_wind;
+sound[48]=snd_wind;
+sound[49]=snd_wind;
+sound[50]=snd_wind;
+sound[51]=snd_wind;
+sound[52]=snd_wind;
+sound[53]=snd_wind;
+sound[54]=snd_wind;
+sound[55]=snd_wind;
+sound[56]=snd_wind;
+sound[57]=snd_wind;
+sound[58]=snd_wind;
+sound[59]=snd_wind;
+sound[60]=snd_wind;
+sound[61]=snd_wind;
+sound[62]=snd_wind;
+sound[63]=snd_wind;
+sound[64]=snd_wind;
+sound[65]=snd_wind;
+sound[66]=snd_wind;
+sound[67]=snd_wind;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>float =0;
+
+current=0;
+count=0;
+
+shadowoffset=0;
+textboxoff=150;
+textboxalph=0;
+questionalph=1;
+
+destroy=false;
+
+selected=1;
+success=false;
 </string>
           </argument>
         </arguments>
@@ -179,7 +357,9 @@ if success=true{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>success=true
+
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 

@@ -67,46 +67,65 @@ player=instance_create(320-92,180-64,obj_player);
 opp=instance_create(320+92,180-64,obj_rival);
 
 ///Dialogue
+text[0]="&gt;*FLASH*"
+text[1]="&gt; Deja Vu. Once again you feel a bump, and are sent scrambling in your tube"
+text[2]="HA, get wrecked NERD!"
+text[3]="AHH, oh it’s you again. Quit doing that you little jerk."
+text[4]="Oh I didn’t notice you were the same person through the camera."
+text[5]="Kinda hilarious you fell for the same thing twice, even freaked out heheheh"
+text[6]="Listen I don’t wanna- actually no, I do. Quit bumping into me kid!"
+text[7]="Pfft, why should I!?"
+text[8]="The way you freak out is probably gonna be the highlight of my biannual cringe compilation."
+text[9]=-1
+text[10]="..."
+text[11]="&gt;He’s staring at you, for the first time not through his camera. You’re relieved he seems to understand."
+text[12]="...Dude, you can’t swim?"
+text[13]="..."
+text[14]="HAHAHAHAH, DUDE, YOU ALMOST GOT ME. Hey I guess I ain’t the only prankmaster around here."
+text[15]="CATCH YOU LATER, LOSER."
+text[16]="Hey, no, wait a second"
+text[17]="&gt;Once again you fall victim to the old flash kick combo, only this time harder. You only barely manage to keep a grip as the cackling prankmaster fades into the distance."
+text[18]=-3
+text[19]="Woah the news, you got connections? Do you think they’d show my videos???"
+text[20]="I always knew you were cool, I got that vibe immediately."
+text[21]="&gt;Damn, my veiled threat didn’t go through at all, better hammer it home."
+text[22]="Nah kid we’ll be on the new cause I’m gonna drown you! Get over here!"
+text[23]="AAAHHH, I got it all on film creep, you're CANCELLED"
+text[24]="&gt;He speeds away once again, keeping the camera trained on you as you second guess the morality of threatening to drown a child."
+text[25]=-3
 
+choice[9,1]="Listen, I freak out because I… can’t actually swim."
+choice[9,2]="Because if you do it again I guarantee we’ll both make the news."
+choiceto[9,1]=10
+choiceto[9,2]=19
+length[9]=2;
 
-text[0]="Placeholder."
-
-length[6]=4; //number of possible choices
-
-choice[6,1]="Are you sure you can't help?"; //choices (THEY WILL SHOW UP IN REVERSE ORDER [bottom to top])
-choice[6,2]="What's your name?";
-choice[6,3]="Don't tell me you're stuck too.";
-choice[6,4]="I'm gonna go find someone else.";
-
-choiceto[6,1]=7 //Which text point do the choices lead to. Also used for -2's
-choiceto[6,2]=9
-choiceto[6,3]=13
-choiceto[6,4]=18
-
-choiceto[8,1]=6 
-choiceto[12,1]=6
-choiceto[17,1]=6
-
-name[0]="Shammy";
-name[1]="Shammy";
-name[2]="Shammy";
-name[3]="Protag";
-name[4]="Protag";
-name[5]="Shammy";
-name[6]="Shammy";
-name[7]="Shammy";
-name[8]="Shammy";
-name[9]="Shammy";
-name[10]="Shammy";
-name[11]="Shammy";
-name[12]="Shammy";
-name[13]="Shammy";
-name[14]="Shammy";
-name[15]="Shammy";
-name[16]="Shammy";
-name[17]="Shammy";
-name[18]="Shammy";
-name[19]="Shammy";
+name[0]=""
+name[1]=""
+name[2]="tUber180"
+name[3]=obj_varhold.p_name;
+name[4]="tUber180"
+name[5]="tUber180"
+name[6]=obj_varhold.p_name;
+name[7]="tUber180"
+name[8]="tUber180"
+name[9]=""
+name[10]="tUber180"
+name[11]=""
+name[12]="tUber180"
+name[13]=obj_varhold.p_name;
+name[14]="tUber180"
+name[15]="tUber180"
+name[16]=obj_varhold.p_name;
+name[17]=""
+name[18]=""
+name[19]="tUber180"
+name[20]="tUber180"
+name[21]=""
+name[22]=obj_varhold.p_name;
+name[23]="tUber180"
+name[24]=""
+name[25]=""
 
 sound[0]=snd_wind;
 sound[1]=snd_wind;
@@ -128,6 +147,12 @@ sound[16]=snd_wind;
 sound[17]=snd_wind;
 sound[18]=snd_wind;
 sound[19]=snd_wind;
+sound[20]=snd_wind;
+sound[21]=snd_wind;
+sound[22]=snd_wind;
+sound[23]=snd_wind;
+sound[24]=snd_wind;
+sound[25]=snd_wind;
 </string>
           </argument>
         </arguments>
@@ -179,7 +204,9 @@ if success=true{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>float+=irandom_range(10,30)/10;
+            <string>success=true
+
+float+=irandom_range(10,30)/10;
 shadowoffset=lerp(shadowoffset,8,0.1);
 
 

@@ -64,7 +64,7 @@ selected=1;
 text[0]="&gt;He drags your inner tube to the side of the pool, giving you a chance to climb out."
 text[1]="&gt;You help him get his computer out, afterwards he even gives you a park voucher for a free ice cream cone as thanks."
 text[2]="Achieved Sute N. Tyes Ending"
-text[3]="Press Spacebar to exit the game."
+text[3]="Press Spacebar to restart the game."
 text[4]=-3
 
 name[0]=""

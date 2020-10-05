@@ -79,9 +79,12 @@ roomto=-1;
 }
 if alph&gt;0.99 {
     if roomto!=-1 &amp;&amp; roomto!=-2 {
+        if (room == roo_boardtest) {
+         obj_varhold.bgm_pos = audio_sound_get_track_position(obj_varhold.bgm_idx)
+        }
         room_goto(roomto);
     } else if roomto=-2 {
-        game_end();
+        game_restart();
     }
 }
 </string>
